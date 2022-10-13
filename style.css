@@ -48,18 +48,18 @@ body {
   line-height: 131.02%;
   color: #ffffff;
 }
-.headerNav button{
+.headerNav button {
   border: none;
-  outline: 0 ;
+  outline: 0;
   box-shadow: none;
   background: none;
   position: relative;
   top: 14px;
 }
-.headerNav button:active{
+.headerNav button:active {
   transform: translate(-3px);
 }
-.headerNav div{
+.headerNav div {
   font-size: 20px;
   width: 25px;
   height: 25px;
@@ -69,13 +69,230 @@ body {
   top: -40px;
   left: 20px;
 }
-.button_nav, i {
+.button_nav,
+i {
   color: #ffa100;
   background-color: none;
   font-size: 25px;
+}
+#carrito_icon {
+  position: relative;
+}
 
-  }
+/* MODAL CARRITO */
+.cartSection {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
 
+  left: 1450px;
+  top: 5px;
+
+  background: #252525;
+  box-shadow: 0px 0px 50px rgba(1, 2, 7, 0.5);
+  border-radius: 15px;
+  right: 0px;
+}
+.cartContainer {
+  width: 453px;
+  height: 891px;
+
+  background: #252525;
+  box-shadow: 0px 0px 50px rgba(1, 2, 7, 0.5);
+  border-radius: 15px;
+}
+
+.cartContainer h2 {
+  width: 278px;
+  height: 23px;
+
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 29px;
+  line-height: 131.02%;
+
+  color: #ffffff;
+}
+.productsCartContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin: 25px;
+  align-items: center;
+  justify-content: center;
+}
+.productsCartCard {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 347px;
+  height: 103px;
+  display: flex;
+  background: #252525;
+  box-shadow: 0px 0px 50px rgba(1, 2, 7, 0.5);
+  border-radius: 15px;
+}
+.productsCartCard img {
+  mix-blend-mode: normal;
+  border-radius: 16px;
+  width: 62px;
+  height: 62px;
+}
+.productsCartCard h3 {
+  height: 20px;
+
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 131.02%;
+
+  color: #ffffff;
+}
+.productsCartCard p {
+  height: 17px;
+
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+
+  letter-spacing: 0.5px;
+
+  color: #ffffff;
+
+  mix-blend-mode: normal;
+  opacity: 0.3;
+}
+.productsCartCard h4 {
+  font-weight: 700;
+  font-size: 25px;
+  line-height: 131.02%;
+
+  background: linear-gradient(
+    98.81deg,
+    #ffa100 -0.82%,
+    #ffa100 -0.81%,
+    #ff005c 101.53%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.productsCartDatos {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  gap: 5px;
+}
+.productsCartQuantityControler {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+#cartCardBtnRemove {
+  width: 26px;
+  height: 26px;
+  background: linear-gradient(
+    98.81deg,
+    #ffa100 -0.82%,
+    #ffa100 -0.81%,
+    #ff005c 101.53%
+  );
+  border-radius: 8px;
+  color: white;
+}
+#cartCardBtnAdd {
+  width: 26px;
+  height: 26px;
+  background: linear-gradient(
+    98.81deg,
+    #ffa100 -0.82%,
+    #ffa100 -0.81%,
+    #ff005c 101.53%
+  );
+  border-radius: 8px;
+  color: white;
+}
+.subtotalContainer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+}
+.subtotalContainer h3,
+span {
+  height: 23px;
+
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 131.02%;
+
+  text-align: right;
+
+  color: #ffffff;
+}
+
+.shippingContainer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+}
+.shippingContainer h3 {
+  height: 23px;
+
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 131.02%;
+
+  text-align: right;
+
+  color: #ffffff;
+}
+.linea {
+  width: 98%;
+  background: #252525;
+  box-shadow: 0px 0px 50px rgba(1, 2, 7, 0.5);
+  border-radius: 15px;
+}
+.totalContainer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.shopContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+}
+.shopContainer button {
+  width: 60%;
+  height: 50px;
+
+  background: linear-gradient(98.81deg, #ffa100 -0.82%, #fb103d 101.53%);
+
+  box-shadow: 11px 28px 50px rgba(20, 78, 90, 0.2);
+  border-radius: 15px;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+  letter-spacing: 0.5px;
+
+  color: #fefeff;
+}
+
+/* FIN MODAL CARRITO */
 .heroSection {
   display: flex;
   justify-content: space-between;
@@ -83,16 +300,15 @@ body {
   width: 90%;
   margin: 0 auto;
 }
-.heroSection img{
-width: 50%;
-height: auto;
+.heroSection img {
+  width: 50%;
+  height: auto;
 }
 .leftHeroContainer {
   display: flex;
   flex-direction: column;
   gap: 30px;
   width: 40%;
-
 }
 .leftHeroContainer h1 {
   font-weight: 700px;
@@ -120,11 +336,11 @@ height: auto;
   border-radius: 15px;
   font-weight: bold;
 }
-.leftHeroContainer button:active{
-  transform: translate(0,3px);
+.leftHeroContainer button:active {
+  transform: translate(0, 3px);
 }
 
-.mainSection{
+.mainSection {
   width: 90%;
   display: flex;
   flex-direction: column;
@@ -157,15 +373,15 @@ height: auto;
   gap: 25px;
   padding: 15px;
 }
-.recomendationsCard img{
+.recomendationsCard img {
   width: 150px;
 }
-.recomendationsCard button{
+.recomendationsCard button {
   border: none;
   outline: none;
 }
-.recomendationsCard button:active{
-  transform: translate(0,1.5px);
+.recomendationsCard button:active {
+  transform: translate(0, 1.5px);
 }
 
 .recomendationsItems {
@@ -192,7 +408,6 @@ height: auto;
   font-weight: 500;
   font-size: 14px;
   color: #ffffff;
-
 }
 .recomendationsCard h4 {
   /* Priece */
