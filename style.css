@@ -1,9 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;700&display=swap");
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
 body {
   background-color: #252525;
   font-family: "Raleway", sans-serif;
@@ -13,6 +15,7 @@ body {
   align-items: center;
   gap: 30px;
 }
+
 .headerSection {
   display: flex;
   justify-content: space-between;
@@ -21,6 +24,7 @@ body {
   width: 90%;
   margin: 0 auto;
 }
+
 .headerNav {
   display: flex;
   gap: 70px;
@@ -29,14 +33,17 @@ body {
   align-items: center;
   font-size: 30px;
 }
+
 .headerNav a {
   display: flex;
   gap: 5px;
 }
+
 .headerNav i {
   color: #ffa100;
   background-color: #252525;
 }
+
 .headerNav p {
   width: 38px;
   height: 16px;
@@ -48,17 +55,20 @@ body {
   line-height: 131.02%;
   color: #ffffff;
 }
+
 .headerNav button {
   border: none;
-  outline: 0;
+outline: none;
   box-shadow: none;
   background: none;
   position: relative;
   top: 14px;
 }
+
 .headerNav button:active {
   transform: translate(-3px);
 }
+
 .headerNav div {
   font-size: 20px;
   width: 25px;
@@ -69,62 +79,69 @@ body {
   top: -40px;
   left: 20px;
 }
+
 .button_nav,
 i {
   color: #ffa100;
   background-color: none;
   font-size: 25px;
 }
+
 #carrito_icon {
   position: relative;
 }
 
 /* MODAL CARRITO */
-.cartSection{
-    display: flex;
-    width: 100%;
-    height: 300vh;
-    position: absolute;
+.cartSection {
+  display: flex;
+  width: 100%;
+  height: 300vh;
+  position: absolute;
+
+  
+  display: none;
 }
+
 .divOpaco {
   position: absolute;
-  background:  black;
-width: 100%;
-height: 300vh;
-opacity: 0.7;
-filter: blur(4px);
+  background: black;
+  width: 100%;
+  height: 300vh;
+  opacity: 0.7;
 }
+
 .cartContainer {
-position: relative;
+  position: relative;
   width: 453px;
   height: 891px;
   left: 1450px;
-
+padding: 15px;
   top: 15px;
   background: #252525;
   border-radius: 15px;
+  display: flex;
+  flex-direction: column;
 }
 
 .cartContainer h2 {
   width: 278px;
   height: 23px;
-
   font-family: "Montserrat";
-  font-style: normal;
   font-weight: 500;
   font-size: 29px;
-  line-height: 131.02%;
-
   color: #ffffff;
 }
+
 .productsCartContainer {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  margin: 25px;
+display: flex;
+flex-direction: column;
+  gap: 5px;
+
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
+  height: 600px;
 }
+
 .productsCartCard {
   display: flex;
   justify-content: space-around;
@@ -136,12 +153,14 @@ position: relative;
   box-shadow: 0px 0px 50px rgba(1, 2, 7, 0.5);
   border-radius: 15px;
 }
+
 .productsCartCard img {
   mix-blend-mode: normal;
   border-radius: 16px;
   width: 62px;
   height: 62px;
 }
+
 .productsCartCard h3 {
   height: 20px;
 
@@ -153,6 +172,7 @@ position: relative;
 
   color: #ffffff;
 }
+
 .productsCartCard p {
   height: 17px;
 
@@ -167,63 +187,64 @@ position: relative;
   mix-blend-mode: normal;
   opacity: 0.3;
 }
+
 .productsCartCard h4 {
   font-weight: 700;
   font-size: 25px;
   line-height: 131.02%;
 
-  background: linear-gradient(
-    98.81deg,
-    #ffa100 -0.82%,
-    #ffa100 -0.81%,
-    #ff005c 101.53%
-  );
+  background: linear-gradient(98.81deg,
+      #ffa100 -0.82%,
+      #ffa100 -0.81%,
+      #ff005c 101.53%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
+
 .productsCartDatos {
   display: flex;
   justify-content: space-around;
   flex-direction: column;
   gap: 5px;
 }
+
 .productsCartQuantityControler {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 15px;
 }
+
 #cartCardBtnRemove {
   width: 26px;
   height: 26px;
-  background: linear-gradient(
-    98.81deg,
-    #ffa100 -0.82%,
-    #ffa100 -0.81%,
-    #ff005c 101.53%
-  );
+  background: linear-gradient(98.81deg,
+      #ffa100 -0.82%,
+      #ffa100 -0.81%,
+      #ff005c 101.53%);
   border-radius: 8px;
   color: white;
 }
+
 #cartCardBtnAdd {
   width: 26px;
   height: 26px;
-  background: linear-gradient(
-    98.81deg,
-    #ffa100 -0.82%,
-    #ffa100 -0.81%,
-    #ff005c 101.53%
-  );
+  background: linear-gradient(98.81deg,
+      #ffa100 -0.82%,
+      #ffa100 -0.81%,
+      #ff005c 101.53%);
   border-radius: 8px;
   color: white;
 }
+
 .subtotalContainer {
   display: flex;
   justify-content: space-around;
   align-items: center;
   width: 100%;
 }
+
 .subtotalContainer h3,
 span {
   height: 23px;
@@ -245,6 +266,7 @@ span {
   align-items: center;
   width: 100%;
 }
+
 .shippingContainer h3 {
   height: 23px;
 
@@ -258,17 +280,20 @@ span {
 
   color: #ffffff;
 }
+
 .linea {
   width: 98%;
   background: #252525;
   box-shadow: 0px 0px 50px rgba(1, 2, 7, 0.5);
   border-radius: 15px;
 }
+
 .totalContainer {
   display: flex;
   justify-content: space-around;
   align-items: center;
 }
+
 .shopContainer {
   display: flex;
   justify-content: center;
@@ -276,8 +301,9 @@ span {
   flex-direction: column;
   width: 100%;
 }
+
 .shopContainer button {
-  width: 60%;
+  width: 70%;
   height: 50px;
 
   background: linear-gradient(98.81deg, #ffa100 -0.82%, #fb103d 101.53%);
@@ -285,16 +311,19 @@ span {
   box-shadow: 11px 28px 50px rgba(20, 78, 90, 0.2);
   border-radius: 15px;
   font-family: "Montserrat";
-  font-style: normal;
+
   font-weight: 700;
-  font-size: 14px;
+  font-size: 18px;
   line-height: 17px;
   text-align: center;
   letter-spacing: 0.5px;
-
+outline: none;
+border: none;
   color: #fefeff;
 }
-
+.shopContainer button:active{
+  transform: translate(0,3px);
+}
 /* FIN MODAL CARRITO */
 .heroSection {
   display: flex;
@@ -303,31 +332,37 @@ span {
   width: 90%;
   margin: 0 auto;
 }
+
 .heroSection img {
   width: 50%;
   height: auto;
 }
+
 .leftHeroContainer {
   display: flex;
   flex-direction: column;
   gap: 30px;
   width: 40%;
 }
+
 .leftHeroContainer h1 {
   font-weight: 700px;
   font-size: 66px;
   color: #ffffff;
 }
+
 .leftHeroContainer span {
   font-weight: 700px;
   font-size: 66px;
   color: #ffffff;
 }
+
 .leftHeroContainer p {
   font-weight: 400px;
   font-size: 22px;
   color: #ffffff;
 }
+
 .leftHeroContainer button {
   outline: none;
   border: none;
@@ -339,6 +374,7 @@ span {
   border-radius: 15px;
   font-weight: bold;
 }
+
 .leftHeroContainer button:active {
   transform: translate(0, 3px);
 }
@@ -364,6 +400,7 @@ span {
   font-size: 22px;
   color: #ffffff;
 }
+
 .recomendationsCard {
   width: 500px;
   height: 120px;
@@ -376,13 +413,16 @@ span {
   gap: 25px;
   padding: 15px;
 }
+
 .recomendationsCard img {
   width: 150px;
 }
+
 .recomendationsCard button {
   border: none;
   outline: none;
 }
+
 .recomendationsCard button:active {
   transform: translate(0, 1.5px);
 }
@@ -406,12 +446,14 @@ span {
 
   color: #ffffff;
 }
+
 .recomendationsCard p {
   height: 17px;
   font-weight: 500;
   font-size: 14px;
   color: #ffffff;
 }
+
 .recomendationsCard h4 {
   /* Priece */
 
@@ -428,6 +470,7 @@ span {
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
+
 #recomendationsCardBtn {
   /* Rectangle 555 */
 
@@ -438,6 +481,7 @@ span {
   border-radius: 17.5px;
   color: #ffffff;
 }
+
 .categorias-h3 {
   width: 87px;
   height: 20px;
@@ -450,6 +494,7 @@ span {
 
   color: #ffffff;
 }
+
 .categoriesContainer {
   display: flex;
   align-items: center;
@@ -458,6 +503,7 @@ span {
   margin: 0 auto;
   justify-content: center;
 }
+
 .categoriesCard {
   display: flex;
   flex-direction: column;
@@ -469,10 +515,12 @@ span {
   box-shadow: 0px 0px 50px rgba(1, 2, 7, 0.5);
   border-radius: 15px;
 }
+
 .categoriesCard img {
   width: 85px;
   height: 86px;
 }
+
 .categoriesCard p {
   font-weight: 400;
   font-size: 18px;
@@ -482,6 +530,7 @@ span {
 
   color: #ffffff;
 }
+
 .categoriesCard hr {
   width: 24px;
   height: 4px;
@@ -490,6 +539,7 @@ span {
   box-shadow: 0px 0px 50px rgba(1, 2, 7, 0.5);
   border-radius: 15px;
 }
+
 .populares {
   margin: 40px;
 
@@ -504,6 +554,7 @@ span {
 
   color: #ffffff;
 }
+
 .productsContainer {
   display: flex;
   gap: 40px;
@@ -513,6 +564,7 @@ span {
   justify-content: center;
   align-items: center;
 }
+
 .productCard {
   width: 282px;
   height: 213px;
@@ -525,17 +577,20 @@ span {
   border-radius: 15px;
   gap: 5px;
 }
+
 .productCard img {
   width: 237px;
   height: 97px;
   mix-blend-mode: normal;
   border-radius: 16px;
 }
+
 .productCardDescription {
   display: flex;
   flex-direction: column;
   width: 80%;
 }
+
 .productCardDescription h3 {
   height: 20px;
 
@@ -547,6 +602,7 @@ span {
 
   color: #ffffff;
 }
+
 .productCardDescription p {
   /* Resaturant Name */
 
@@ -564,12 +620,14 @@ span {
   mix-blend-mode: normal;
   opacity: 0.3;
 }
+
 .productCardPrice {
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 80%;
 }
+
 .productCardPrice p {
   font-family: "Montserrat";
 
@@ -582,6 +640,7 @@ span {
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
+
 .productCardPrice button {
   width: 85px;
   height: 29px;
@@ -600,6 +659,7 @@ span {
   width: 90%;
   margin: 0 auto;
 }
+
 .linksContainer {
   display: flex;
   justify-content: center;
@@ -607,6 +667,7 @@ span {
   gap: 50px;
   height: 40vh;
 }
+
 .linksContainer a {
   height: 22px;
   text-decoration: none;
@@ -619,9 +680,11 @@ span {
 
   color: #ffffff;
 }
+
 footer i {
   color: #fb103d;
 }
+
 footer h2 {
   width: 267px;
   height: 22px;
@@ -635,6 +698,7 @@ footer h2 {
   text-align: center;
   color: #ffffff;
 }
+
 .container_total {
   margin: 50px;
 }
