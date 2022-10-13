@@ -1,48 +1,47 @@
 <!DOCTYPE html>
 <html lang="es">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Zappi Pizzeria</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="https://kit.fontawesome.com/d7a00b9964.js" crossorigin="anonymous"></script>
-</head>
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/d7a00b9964.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
 
-<body>
-
+  <body>
     <header class="headerSection">
-        <img src="assets/img/zappi-icon.png" alt="" class="headerImg">
+      <img src="assets/img/zappi-icon.png" alt="" class="headerImg" />
 
-        <nav class="headerNav">
+      <nav class="headerNav">
+        <a href="index.html">
+          <i class="fa-solid fa-house"></i>
+          <p>Home</p>
+        </a>
 
-            <a href="index.html">
-                <i class="fa-solid fa-house"></i>
-                <p>Home</p>
-            </a>
+        <button>
+          <i class="fa-solid fa-cart-shopping"></i>
+          <span id="cartArticlesCounter"></span>
+        </button>
 
-            <button>
-                <i class="fa-solid fa-cart-shopping"></i>
-                <span id="cartArticlesCounter">N articles</span>
-            </button>
-
-            <a href="#">
-                <i class="fa-solid fa-user"></i>
-            </a>
-
-        </nav>
+        <a href="#">
+          <i class="fa-solid fa-user"></i>
+        </a>
+      </nav>
     </header>
 
-    <section class="cartSection">
+    <!-- <section class="cartSection">
 
         <div class="cartContainer">
             <i class="fa-solid fa-xmark"></i>
             <h2>Tus productos</h2>
 
-            <div class="productsCartContainer">
+            <div class="productsCartContainer"> -->
 
-                <!--                 <div class="productsCartCard">
+    <!--                 <div class="productsCartCard">
                     <img src="" alt="">
 
                     <div>
@@ -57,7 +56,7 @@
                     </div>
                 </div>
 -->
-                </div>
+    <!-- </div>
 
                 <div class="subtotalContainer">
                      <h3>Subtotal:</h3>
@@ -85,130 +84,219 @@
 
         </div>
 
-    </section>
+    </section> -->
 
     <section class="heroSection">
+      <div class="leftHeroContainer">
+        <h1>Si tenes Zappi,</h1>
+        <h1>Tenes Nucba.</h1>
 
-        <div class="leftHeroContainer">
+        <p>
+          Busca lo que quieras y Nucba te lo lleva al instante, no te quedes sin
+          comida!
+        </p>
 
-            <h1>
-                Si tenes Zappi, tenes Nucba.
-            </h1>
+        <button id="heroSeeMoreBtn">VER MAS</button>
+      </div>
 
-            <p>
-                Busca lo que quieras y Nucba te lo lleva al instante, no te quedes sin comida!
-            </p>
-
-            <button id="heroSeeMoreBtn">
-                VER MAS
-            </button>
-
-        </div>
-
-
-        <img src="assets/img/hero-img.png" alt="" class="heroImg">
-
+      <img src="assets/img/hero-img.png" alt="" class="heroImg" />
     </section>
 
     <main class="mainSection">
-
-        <div class="recomendationsContainer" id="recomendations">
-
-            <!--             <div class="recomendationsCard">
-                <img src="" alt="">
-                <div>
-                    <h3>Titulo Generico</h3>
-                    <p> descripcion generica</p>
-                    <h4>$ generico</h4>
-                </div>
-                <button id="recomendationsCardBtn">Agregar</button>
-
-            </div>
- -->
-
+      <h2>Hoy te recomendamos</h2>
+      <div class="recomendationsContainer" id="recomendations">
+        <div class="recomendationsCard">
+          <img src="/e5/assets/img/hamburguesa.png" alt="" />
+          <div class="recomendationsItems">
+            <h3>Bennazianna</h3>
+            <p>la mas completa</p>
+            <h4>$ 3650</h4>
+          </div>
+          <button id="recomendationsCardBtn">Agregar</button>
+        </div>
+        <div class="recomendationsCard">
+          <img src="/e5/assets/img/hamburguesa.png" alt="" />
+          <div class="recomendationsItems">
+            <h3>Bennazianna</h3>
+            <p>la mas completa</p>
+            <h4>$ 3650</h4>
+          </div>
+          <button id="recomendationsCardBtn">Agregar</button>
+        </div>
+        <div class="recomendationsCard">
+          <img src="/e5/assets/img/hamburguesa.png" alt="" />
+          <div class="recomendationsItems">
+            <h3>Bennazianna</h3>
+            <p>la mas completa</p>
+            <h4>$ 3650</h4>
+          </div>
+          <button id="recomendationsCardBtn">Agregar</button>
+        </div>
+      </div>
+      <h3 class="categorias-h3">Categorías</h3>
+      <div class="categoriesContainer">
+        <div class="categoriesCard" id="CategoriesPopular">
+          <img src="assets/img/populares.png" alt="" />
+          <p>Populares</p>
+          <hr />
         </div>
 
-        <div class="categoriesContainer">
-            <div class="categoriesCard" id="CategoriesPopular">
-                <img src="assets/img/populares.png" alt="">
-                <p>Populares</p>
-                <hr>
-            </div>
-
-            <div class="categoriesCard" id="CategoriesPizzas">
-                <img src="assets/img/pizzas.png" alt="">
-                <p>Pizzas</p>
-                <hr>
-            </div>
-
-            <div class="categoriesCard" id="Categoriesburgers">
-                <img src="assets/img/hamburguesa.png" alt="">
-                <p>Hamburguesas</p>
-                <hr>
-            </div>
-
-            <div class="categoriesCard" id="CategoriesNapaPuki">
-                <img src="assets/img/napapuki.png" alt="">
-                <p>NapaPuki</p>
-                <hr>
-            </div>
-
-            <div class="categoriesCard" id="CategoriesWraps">
-                <img src="assets/img/buritto.png" alt="">
-                <p>Wraps</p>
-                <hr>
-            </div>
-
-            <div class="categoriesCard" id="CategoriesMexican">
-                <img src="assets/img/mexican.png" alt="">
-                <p>Mexican Food</p>
-                <hr>
-            </div>
-
-            <div class="categoriesCard" id="Categoriesshakes">
-                <img src="assets/img/bebidas.png" alt="">
-                <p>Batidos</p>
-                <hr>
-            </div>
-
+        <div class="categoriesCard" id="CategoriesPizzas">
+          <img src="assets/img/pizzas.png" alt="" />
+          <p>Pizzas</p>
+          <hr />
         </div>
 
-        <div class="productsContainer" id="products">
-
-            <!--             <div class="productCard">
-
-                <img src="" alt="">
-
-                <div class="productCardDescription">
-                    <h3>¡Q’ Jamone!</h3>
-                    <p>c/jamón crudo</p>
-                </div>
-
-                <div class="productCardPrice">
-                    <p>$350</p>
-                    <button id="productCardBtn">
-                        Agregar
-                    </button>
-                </div>
- -->
+        <div class="categoriesCard" id="Categoriesburgers">
+          <img src="assets/img/hamburguesa.png" alt="" />
+          <p>Hamburguesas</p>
+          <hr />
         </div>
 
+        <div class="categoriesCard" id="CategoriesNapaPuki">
+          <img src="assets/img/napapuki.png" alt="" />
+          <p>NapaPuki</p>
+          <hr />
         </div>
+
+        <div class="categoriesCard" id="CategoriesWraps">
+          <img src="assets/img/buritto.png" alt="" />
+          <p>Wraps</p>
+          <hr />
+        </div>
+
+        <div class="categoriesCard" id="CategoriesMexican">
+          <img src="assets/img/mexican.png" alt="" />
+          <p>Mexican Food</p>
+          <hr />
+        </div>
+
+        <div class="categoriesCard" id="Categoriesshakes">
+          <img src="assets/img/bebidas.png" alt="" />
+          <p>Batidos</p>
+          <hr />
+        </div>
+      </div>
+      <h3 class="populares">Los más populares</h3>
+      <div class="productsContainer" id="products">
+        <div class="productCard">
+          <img src="/pizza.jpeg" alt="" />
+
+          <div class="productCardDescription">
+            <h3>La Mr. Pit</h3>
+            <p>Solo para expertos</p>
+          </div>
+
+          <div class="productCardPrice">
+            <p>$350</p>
+            <button id="productCardBtn">Agregar</button>
+          </div>
+        </div>
+        <div class="productCard">
+          <img src="/pizza.jpeg" alt="" />
+
+          <div class="productCardDescription">
+            <h3>La Mr. Pit</h3>
+            <p>Solo para expertos</p>
+          </div>
+
+          <div class="productCardPrice">
+            <p>$350</p>
+            <button id="productCardBtn">Agregar</button>
+          </div>
+        </div>
+        <div class="productCard">
+          <img src="/pizza.jpeg" alt="" />
+
+          <div class="productCardDescription">
+            <h3>La Mr. Pit</h3>
+            <p>Solo para expertos</p>
+          </div>
+
+          <div class="productCardPrice">
+            <p>$350</p>
+            <button id="productCardBtn">Agregar</button>
+          </div>
+        </div>
+        <div class="productCard">
+          <img src="/pizza.jpeg" alt="" />
+
+          <div class="productCardDescription">
+            <h3>La Mr. Pit</h3>
+            <p>Solo para expertos</p>
+          </div>
+
+          <div class="productCardPrice">
+            <p>$350</p>
+            <button id="productCardBtn">Agregar</button>
+          </div>
+        </div>
+        <div class="productCard">
+          <img src="/pizza.jpeg" alt="" />
+
+          <div class="productCardDescription">
+            <h3>La Mr. Pit</h3>
+            <p>Solo para expertos</p>
+          </div>
+
+          <div class="productCardPrice">
+            <p>$350</p>
+            <button id="productCardBtn">Agregar</button>
+          </div>
+        </div>
+        <div class="productCard">
+          <img src="/pizza.jpeg" alt="" />
+
+          <div class="productCardDescription">
+            <h3>La Mr. Pit</h3>
+            <p>Solo para expertos</p>
+          </div>
+
+          <div class="productCardPrice">
+            <p>$350</p>
+            <button id="productCardBtn">Agregar</button>
+          </div>
+        </div>
+        <div class="productCard">
+          <img src="/pizza.jpeg" alt="" />
+
+          <div class="productCardDescription">
+            <h3>La Mr. Pit</h3>
+            <p>Solo para expertos</p>
+          </div>
+
+          <div class="productCardPrice">
+            <p>$350</p>
+            <button id="productCardBtn">Agregar</button>
+          </div>
+        </div>
+        <div class="productCard">
+          <img src="/pizza.jpeg" alt="" />
+
+          <div class="productCardDescription">
+            <h3>La Mr. Pit</h3>
+            <p>Solo para expertos</p>
+          </div>
+
+          <div class="productCardPrice">
+            <p>$350</p>
+            <button id="productCardBtn">Agregar</button>
+          </div>
+        </div>
+      </div>
     </main>
 
     <footer class="footerSection">
-        <div class="linksContainer">
-            <a href="#">Terminos de uso</a>
-            <a href="#">Trabaja con nosotros</a>
-            <a href="#">Soporte</a>
-        </div>
-        <h2>
-            Hecho con <i class="fa-solid fa-heart"></i> en <span>NUCBAZAPPI</span>
-        </h2>
+      <div class="linksContainer">
+        <a href="#">Términos de Uso</a>
+        <a href="#">Trabajá con Nosotros</a>
+        <a href="#">Soporte</a>
+      </div>
+      <h2>
+        Hecho con <i class="fa-solid fa-heart"></i> en <span>NUCBAZAPPI</span>
+      </h2>
     </footer>
 
     <script src="index.js"></script>
-
-</body>
-
+  </body>
 </html>
