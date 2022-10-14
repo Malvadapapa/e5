@@ -1,12 +1,562 @@
-[{
+[
+  {
+    "Categoria": "pizzas",
+    "Id": 1,
+    "Nombre": "La Mr. Pit",
+    "Descripcion": "Solo para expertos",
+    "Precio": 350,
+    "Popular": true,
+    "Stock": 100,
+    "img": "./assets/img/PhotoPizza-1"
+  },
+  {
+    "Categoria": "pizzas",
+    "id": 2,
+    "Nombre": "¡Q`Jamone!",
+    "Descripcion": "c/jamón crudo",
+    "Precio": 350,
+    "Popular": true,
+    "Stock": 100,
+    "img": "./assets/img/PhotoPizza-2"
+  },
+  {
+    "Categoria": "pizzas",
+    "id": 3,
+    "Nombre": "La Charly Garcia",
+    "Descripcion": "¡BASTA!",
+    "Precio": 380,
+    "Popular": true,
+    "Stock": 100,
+    "img": "./assets/img/PhotoPizza-3"
+  },
+  {
+    "Categoria": "pizzas",
+    "id": 4,
+    "Nombre": "La Maradona",
+    "Descripcion": "¡Eterna!",
+    "Precio": 1358,
+    "Popular": true,
+    "Stock": 100,
+    "img": "./assets/img/PhotoPizza-4"
+  },
+  {
+    "Categoria": "pizzas",
+    "id": 5,
+    "Nombre": "Picantovich",
+    "Descripcion": "Pica 2 veces",
+    "Precio": 750,
+    "Popular": true,
+    "Stock": 100,
+    "img": "./assets/img/PhotoPizza-5"
+  },
+  {
+    "Categoria": "pizzas",
+    "id": 6,
+    "Nombre": "La Hasbulla",
+    "Descripcion": "En Honor al 1",
+    "Precio": 990,
+    "Popular": true,
+    "Stock": 100,
+    "img": "./assets/img/PhotoPizza-6"
+  },
+  {
+    "Categoria": "pizzas",
+    "id": 7,
+    "Nombre": "Leo Messi",
+    "Descripcion": "¡De pié señores!",
+    "Precio": 10,
+    "Popular": true,
+    "Stock": 100,
+    "img": "./assets/img/PhotoPizza-7"
+  },
+  {
+    "Categoria": "pizzas",
+    "id": 8,
+    "Nombre": "Nick Gi",
+    "Descripcion": "La que desaparece",
+    "Precio": "Gratis",
+    "Popular": true,
+    "Stock": 100,
+    "img": "./assets/img/PhotoPizza-8"
+  },
+  {
+    "Categoria": "pizzas",
+    "Id": 9,
+    "Nombre": "Gol",
+    "Descripcion": "Al ángulo",
+    "Precio": 250,
+    "Popular": true,
+    "Stock": 100,
+    "img": "./assets/img/PhotoPizza-9"
+  },
+  {
+    "Categoria": "pizzas",
+    "id": 10,
+    "Nombre": "La Sabella",
+    "Descripcion": "¡Te desmayas!",
+    "Precio": 1850,
+    "Popular": true,
+    "Stock": 100,
+    "img": "./assets/img/PhotoPizza-10"
+  },
+  {
+    "Categoria": "pizzas",
+    "id": 11,
+    "Nombre": "Titán",
+    "Descripcion": "En Honor a Martín",
+    "Precio": 2300,
+    "Popular": true,
+    "Stock": 100,
+    "img": "./assets/img/PhotoPizza-11"
+  },
+  {
+    "Categoria": "pizzas",
+    "id": 12,
+    "Nombre": "Madrid",
+    "Descripcion": "Comen 5",
+    "Precio": 1358,
+    "Popular": true,
+    "Stock": 100,
+    "img": "./assets/img/PhotoPizza-12"
+  },
+  {
+    "Categoria": "pizzas",
+    "id": 13,
+    "Nombre": "Vaca",
+    "Descripcion": "Santi For Ever!",
+    "Precio": 150,
+    "Popular": true,
+    "Stock": 100,
+    "img": "./assets/img/PhotoPizza-13"
+  },
+  {
+    "Categoria": "pizzas",
+    "id": 14,
+    "Nombre": "Policias en Accion",
+    "Descripcion": "Hasta las manos",
+    "Precio": 777,
+    "Popular": true,
+    "Stock": 100,
+    "img": "./assets/img/PhotoPizza-14"
+  },
+  {
+    "Categoria": "pizzas",
+    "id": 15,
+    "Nombre": "El Mati",
+    "Descripcion": "¡Ésta no se rompe!",
+    "Precio": 10,
+    "Popular": true,
+    "Stock": 100,
+    "img": "./assets/img/PhotoPizza-15"
+  },
+  {
+    "Categoria": "pizzas",
+    "id": 16,
+    "Nombre": "La 2117",
+    "Descripcion": "La Mejor",
+    "Precio": "Gratis",
+    "Popular": true,
+    "Stock": 100,
+    "img": "./assets/img/PhotoPizza-16"
+  },
+  {
+    "Categoria": "pizzas",
+    "id": 17,
+    "Nombre": "Bennezianna",
+    "Descripcion": "La más completa",
+    "Precio": 3650,
+    "Popular": true,
+    "Stock": 100,
+    "img": "./assets/img/PhotoPizza-17"
+  },
+  {
+    "Categoria": "pizzas",
+    "id": 18,
+    "Nombre": "Tronco-Pizza",
+    "Descripcion": "Para todo el día",
+    "Precio": 870,
+    "Popular": true,
+    "Stock": 100,
+    "img": "./assets/img/PhotoPizza-18"
+  },
+  {
+    "Categoria": "Hamburguesas",
+    "Id": 1,
+    "Nombre": "Custom",
+    "Descripcion": "La máss tuneada",
+    "Precio": 900,
+    "Popular": true,
+    "Stock": 100,
+    "img": "./assets/img/PhotoHambur-1"
+  },
+  {
+    "Categoria": "Hamburguesas",
+    "id": 2,
+    "Nombre": "Chester",
+    "Descripcion": "Cheddar extra",
+    "Precio": 1000,
+    "Popular": true,
+    "Stock": 100,
+    "img": "./assets/img/PhotoHambur-2"
+  },
+  {
+    "Categoria": "Hamburguesas",
+    "id": 3,
+    "Nombre": "La Charly",
+    "Descripcion": "Séptimo piso",
+    "Precio": 2500,
+    "Popular": true,
+    "Stock": 100,
+    "img": "./assets/img/PhotoHambur-3"
+  },
+  {
+    "Categoria": "Hamburguesas",
+    "id": 4,
+    "Nombre": "Salida de recital",
+    "Descripcion": "La flaca",
+    "Precio": 250,
+    "Popular": true,
+    "Stock": 100,
+    "img": "./assets/img/PhotoHambur-4"
+  },
+  {
+    "Categoria": "Hamburguesas",
+    "id": 5,
+    "Nombre": "Mexicana",
+    "Descripcion": "Awevo extra",
+    "Precio": 490,
+    "Popular": true,
+    "Stock": 100,
+    "img": "./assets/img/PhotoHambur-5"
+  },
+  {
+    "Categoria": "Hamburguesas",
+    "id": 6,
+    "Nombre": "Chilena",
+    "Descripcion": "Como fideo",
+    "Precio": 300,
+    "Popular": true,
+    "Stock": 100,
+    "img": "./assets/img/PhotoHambur-6"
+  },
+  {
+    "Categoria": "Hamburguesas",
+    "id": 7,
+    "Nombre": "No llores",
+    "Descripcion": "Cebolla extra",
+    "Precio": 10,
+    "Popular": true,
+    "Stock": 100,
+    "img": "./assets/img/PhotoHambur-7"
+  },
+  {
+    "Categoria": "Hamburguesas",
+    "id": 8,
+    "Nombre": "El ancla",
+    "Descripcion": "La mas pesada",
+    "Precio": 1800,
+    "Popular": true,
+    "Stock": 100,
+    "img": "./assets/img/PhotoHambur-8"
+  },
+  {
+    "Categoria": "Hamburguesas",
+    "Id": 9,
+    "Nombre": "Shakira",
+    "Descripcion": "Pan árabe colombiano",
+    "Precio": 700,
+    "Popular": true,
+    "Stock": 100,
+    "img": "./assets/img/PhotoHambur-9"
+  },
+  {
+    "Categoria": "Hamburguesas",
+    "id": 10,
+    "Nombre": "El albañil",
+    "Descripcion": "Paleta y queso",
+    "Precio": 150,
+    "Popular": true,
+    "Stock": 100,
+    "img": "./assets/img/PhotoHambur-10"
+  },
+  {
+    "Categoria": "Hamburguesas",
+    "id": 11,
+    "Nombre": "Merlo",
+    "Descripcion": "Mostaza extra",
+    "Precio": 600,
+    "Popular": true,
+    "Stock": 100,
+    "img": "./assets/img/PhotoHambur-11"
+  },
+  {
+    "Categoria": "Hamburguesas",
+    "id": 12,
+    "Nombre": "Al novio",
+    "Descripcion": "Mucha carne para vos",
+    "Precio": 3000,
+    "Popular": true,
+    "Stock": 100,
+    "img": "./assets/img/PhotoHambur-12"
+  },
+  {
+    "Categoria": "Hamburguesas",
+    "id": 13,
+    "Nombre": "La Diego Torres",
+    "Descripcion": "Todo verde",
+    "Precio": 450,
+    "Popular": true,
+    "Stock": 100,
+    "img": "./assets/img/PhotoHambur-13"
+  },
+  {
+    "Categoria": "Hamburguesas",
+    "id": 14,
+    "Nombre": "El bambino",
+    "Descripcion": "la mas chica",
+    "Precio": "gratis",
+    "Popular": true,
+    "Stock": 100,
+    "img": "./assets/img/PhotoHambur-14"
+  },
+  {
+    "Categoria": "Hamburguesas",
+    "id": 15,
+    "Nombre": "Brigada A",
+    "Descripcion": "La Magnífica",
+    "Precio": 1470,
+    "Popular": true,
+    "Stock": 100,
+    "img": "./assets/img/PhotoHambur-15"
+  },
+  {
+    "Categoria": "Hamburguesas",
+    "id": 16,
+    "Nombre": "It",
+    "Descripcion": "La Cosa",
+    "Precio": 2150,
+    "Popular": true,
+    "Stock": 100,
+    "img": "./assets/img/PhotoHambur-16"
+  },
+  {
+    "Categoria": "Papas Fritas",
     "id": 1,
-    "name": "Muzzarella",
-    "precio": 800
-
-},
-{
+    "Nombre": "Morenas",
+    "Descripcion": "Rusticas",
+    "Precio": 250,
+    "Popular": true,
+    "Stock": 100,
+    "img": "./assets/img/PhotoNapapuki-1"
+  },
+  {
+    "Categoria": "Papas Fritas",
+    "id": 2,
+    "Nombre": "Divina",
+    "Descripcion": "Cabello de Angel",
+    "Precio": 300,
+    "Popular": true,
+    "Stock": 100,
+    "img": "./assets/img/PhotoNapapuki-2"
+  },
+  {
+    "Categoria": "Papas Fritas",
+    "id": 3,
+    "Nombre": "fosforos",
+    "Descripcion": "las pai",
+    "Precio": 170,
+    "Popular": true,
+    "Stock": 100,
+    "img": "./assets/img/PhotoNapapuki-3"
+  },
+  {
+    "Categoria": "Papas Fritas",
+    "id": 4,
+    "Nombre": "clasicas",
+    "Descripcion": "De casa",
+    "Precio": 350,
+    "Popular": true,
+    "Stock": 100,
+    "img": "./assets/img/PhotoNapapuki-4"
+  },
+  {
+    "Categoria": "Papas Fritas",
+    "id": 5,
+    "Nombre": "Papas | Provenzal",
+    "Descripcion": "Van como piña",
+    "Precio": 360,
+    "Popular": true,
+    "Stock": 100,
+    "img": "./assets/img/PhotoNapapuki-5"
+  },
+  {
+    "Categoria": "Wraps",
     "id": 1,
-    "name": "Muzzarella",
-    "precio": 800   
-}
+    "Nombre": "El desayuno",
+    "Descripcion": "Para el campeón",
+    "Precio": 660,
+    "Popular": true,
+    "Stock": 100,
+    "img": "./assets/img/PhotoBurrito-1"
+  },
+  {
+    "Categoria": "Wraps",
+    "id": 2,
+    "Nombre": "Hawái",
+    "Descripcion": "Una locura de sabor",
+    "Precio": 690,
+    "Popular": true,
+    "Stock": 100,
+    "img": "./assets/img/PhotoBurrito-2"
+  },
+  {
+    "Categoria": "Wraps",
+    "id": 3,
+    "Nombre": "Merienda",
+    "Descripcion": "Manzanarez Canela",
+    "Precio": 675,
+    "Popular": true,
+    "Stock": 100,
+    "img": "./assets/img/PhotoBurrito-3"
+  },
+  {
+    "Categoria": "Wraps",
+    "id": 4,
+    "Nombre": "Hijo peleador",
+    "Descripcion": "Bien picante el pollo",
+    "Precio": 600,
+    "Popular": true,
+    "Stock": 100,
+    "img": "./assets/img/PhotoBurrito-4"
+  },
+  {
+    "Categoria": "Wraps",
+    "id": 5,
+    "Nombre": "La italiana",
+    "Descripcion": "Capressse",
+    "Precio": 680,
+    "Popular": true,
+    "Stock": 100,
+    "img": "./assets/img/PhotoBurrito-5"
+  },
+  {
+    "Categoria": "Wraps",
+    "id": 6,
+    "Nombre": "El vigi",
+    "Descripcion": "Te duermo todo",
+    "Precio": 360,
+    "Popular": true,
+    "Stock": 100,
+    "img": "./assets/img/PhotoBurrito-6"
+  },
+  {
+    "Categoria": "Mexican Food",
+    "id": 1,
+    "Nombre": "Tacos",
+    "Descripcion": "A dos manos",
+    "Precio": 660,
+    "Popular": true,
+    "Stock": 100,
+    "img": "./assets/img/PhotoMexican-1"
+  },
+  {
+    "Categoria": "Mexican Food",
+    "id": 2,
+    "Nombre": "Tortilla ansestral",
+    "Descripcion": "Tlayudas",
+    "Precio": 600,
+    "Popular": true,
+    "Stock": 100,
+    "img": "./assets/img/PhotoMexican-2"
+  },
+  {
+    "Categoria": "Mexican Food",
+    "id": 3,
+    "Nombre": "Carnitas",
+    "Descripcion": "La mejor parri",
+    "Precio": 675,
+    "Popular": true,
+    "Stock": 100,
+    "img": "./assets/img/PhotoMexican-3"
+  },
+  {
+    "Categoria": "Mexican Food",
+    "id": 4,
+    "Nombre": "El chabelo",
+    "Descripcion": "funciona",
+    "Precio": 640,
+    "Popular": true,
+    "Stock": 100,
+    "img": "./assets/img/PhotoMexican-4"
+  },
+  {
+    "Categoria": "Mexican Food",
+    "id": 5,
+    "Nombre": "El chavo",
+    "Descripcion": "La más económica",
+    "Precio": 600,
+    "Popular": true,
+    "Stock": 100,
+    "img": "./assets/img/PhotoMexican-5"
+  },
+  {
+    "Categoria": "Mexican Food",
+    "id": 6,
+    "Nombre": "El Quico",
+    "Descripcion": "Sobrebordado de sabor",
+    "Precio": 610,
+    "Popular": true,
+    "Stock": 100,
+    "img": "./assets/img/PhotoMexican-6"
+  },
+  {
+    "Categoria": "Batidos",
+    "id": 1,
+    "Nombre": "Split",
+    "Descripcion": "La del mono",
+    "Precio": 660,
+    "Popular": true,
+    "Stock": 100,
+    "img": "./assets/img/PhotoBatido-1"
+  },
+  {
+    "Categoria": "Batidos",
+    "id": 2,
+    "Nombre": "Pantera rosa",
+    "Descripcion": "Frutifru",
+    "Precio": 600,
+    "Popular": true,
+    "Stock": 100,
+    "img": "./assets/img/PhotoBatido-2"
+  },
+  {
+    "Categoria": "Batidos",
+    "id": 3,
+    "Nombre": "El marroquí",
+    "Descripcion": "El mejor chocolate",
+    "Precio": 675,
+    "Popular": true,
+    "Stock": 100,
+    "img": "./assets/img/PhotoBatido-3"
+  },
+  {
+    "Categoria": "Batidos",
+    "id": 4,
+    "Nombre": "Super 2117",
+    "Descripcion": "Multifruta",
+    "Precio": 640,
+    "Popular": true,
+    "Stock": 100,
+    "img": "./assets/img/PhotoBatido-4"
+  },
+  {
+    "Categoria": "Batidos",
+    "id": 5,
+    "Nombre": "La Americana",
+    "Descripcion": "Sensual",
+    "Precio": 610,
+    "Popular": true,
+    "Stock": 100,
+    "img": "./assets/img/PhotoBatido-5"
+  }
 ]
