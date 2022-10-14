@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Raleway:wght@300;400;700&display=swap");
 
 * {
   margin: 0;
@@ -6,12 +6,24 @@
   box-sizing: border-box;
 }
 
-html{
+html {
   font-family: "Raleway", sans-serif;
   background-color: #131415;
   position: relative;
+  scroll-behavior: smooth;
 }
-.container{
+
+:root {
+  --font-size-sm: clamp(0.8rem, 0.17vw + 0.76rem, 0.89rem);
+  --font-size-base: clamp(1rem, 0.34vw + 0.91rem, 1.19rem);
+  --font-size-md: clamp(1.25rem, 0.61vw + 1.1rem, 1.58rem);
+  --font-size-lg: clamp(1.56rem, 1vw + 1.31rem, 2.11rem);
+  --font-size-xl: clamp(1.95rem, 1.56vw + 1.56rem, 2.81rem);
+  --font-size-xxl: clamp(2.44rem, 2.38vw + 1.85rem, 3.75rem);
+  --font-size-xxxl: clamp(3.05rem, 3.54vw + 2.17rem, 5rem);
+}
+
+.container {
   width: 100%;
   height: 100%;
   display: flex;
@@ -19,7 +31,6 @@ html{
   align-items: center;
   flex-direction: column;
 }
-
 
 .headerSection {
   display: flex;
@@ -31,14 +42,14 @@ html{
   padding-left: 5%;
   padding-top: 2%;
 }
-.headerSection > .logo_container{
+.headerSection > .logo_container {
   width: 100%;
   display: flex;
   justify-content: flex-start;
   align-items: center;
 }
 
-.headerSection > .logo_container > img{
+.headerSection > .logo_container > img {
   max-width: 60px;
 }
 
@@ -57,7 +68,8 @@ html{
   gap: 5px;
 }
 
-.headerNav > button, a > i {
+.headerNav > button,
+a > i {
   color: #ffa100;
   background-color: #252525;
   font-size: 15px;
@@ -95,8 +107,6 @@ html{
   left: 60%;
 }
 
-
-
 /* MODAL CARRITO */
 .cartSection {
   width: 100%;
@@ -107,7 +117,6 @@ html{
 
   display: none;
 }
-
 
 .cartContainer {
   position: absolute;
@@ -126,10 +135,10 @@ html{
   gap: 10px;
   padding: 2%;
 }
-.cartContainer > i{
+.cartContainer > i {
   cursor: pointer;
   align-self: flex-start;
-  background: linear-gradient(98.81deg, #FFA100 -0.82%, #FB103D 101.53%);
+  background: linear-gradient(98.81deg, #ffa100 -0.82%, #fb103d 101.53%);
   color: #ffffff;
   font-size: 12px;
   width: 8%;
@@ -138,7 +147,6 @@ html{
   align-items: center;
   justify-content: center;
   border-radius: 10%;
-
 }
 .cartContainer h2 {
   font-family: "Montserrat";
@@ -189,14 +197,14 @@ html{
 
 .productsCartCard p {
   font-weight: 300;
-  font-size: clamp(9px, 0.8vw, 14px);;
-  color: #4D4D4D;
+  font-size: clamp(9px, 0.8vw, 14px);
+  color: #4d4d4d;
 }
 
 .productsCartCard h4 {
   font-family: "Montserrat";
   font-weight: 700;
-  font-size: clamp(14px, 1.3vw, 19px);;
+  font-size: clamp(14px, 1.3vw, 19px);
   background: linear-gradient(90.81deg, #ffa100 -0.82%, #ff005c 50.53%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -211,14 +219,14 @@ html{
 
 .recomendationsCard p {
   font-weight: 300;
-  font-size: clamp(9px, 0.8vw, 14px);;
-  color: #4D4D4D;
+  font-size: clamp(9px, 0.8vw, 14px);
+  color: #4d4d4d;
 }
 
 .recomendationsCard h4 {
   font-family: "Montserrat";
   font-weight: 700;
-  font-size: clamp(14px, 1.3vw, 19px);;
+  font-size: clamp(14px, 1.3vw, 19px);
   background: linear-gradient(98.81deg, #ffa100 -0.82%, #ff005c 101.53%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -243,24 +251,30 @@ html{
   width: 26px;
   height: 26px;
   border: none;
-  background: linear-gradient(98.81deg, #4e3c1c -0.82%, #352812 -0.81%, #3b0619 101.53%);
+  background: linear-gradient(
+    98.81deg,
+    #4e3c1c -0.82%,
+    #352812 -0.81%,
+    #3b0619 101.53%
+  );
   border-radius: 8px;
   color: white;
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
-
 }
 
 #cartCardBtnAdd {
   width: 26px;
   height: 26px;
   border: none;
-  background: linear-gradient(98.81deg,
-      #ffa100 -0.82%,
-      #ffa100 -0.81%,
-      #ff005c 101.53%);
+  background: linear-gradient(
+    98.81deg,
+    #ffa100 -0.82%,
+    #ffa100 -0.81%,
+    #ff005c 101.53%
+  );
   border-radius: 8px;
   color: white;
   cursor: pointer;
@@ -310,16 +324,14 @@ span {
   justify-content: space-between;
   align-items: center;
   width: 90%;
-
 }
-.totalContainer > h2{
+.totalContainer > h2 {
   font-weight: 400;
 }
-.totalContainer > span{
-  color: #FF7A00;
+.totalContainer > span {
+  color: #ff7a00;
   font-weight: 700;
 }
-
 
 .shopContainer {
   display: flex;
@@ -345,15 +357,14 @@ span {
   color: #fefeff;
   cursor: pointer;
 }
-.shopContainer > a{
+.shopContainer > a {
   text-decoration: none;
-  color: #4D4D4D;
+  color: #4d4d4d;
 }
 
-.shopContainer button:active{
-  transform: translate(0,3px);
+.shopContainer button:active {
+  transform: translate(0, 3px);
 }
-
 
 /* FIN MODAL CARRITO */
 
@@ -381,7 +392,8 @@ span {
 
 .leftHeroContainer h1 {
   font-weight: 700px;
-  font-size: 66px;
+  /* font-size: 66px; */
+  font-size: var(--font-size-xxxl);
   color: #ffffff;
 }
 .leftHeroContainer h2 {
@@ -389,13 +401,12 @@ span {
   font-size: 45px;
   color: #ffffff;
   line-height: 0px;
-
 }
 
-
 .leftHeroContainer p {
-  font-weight: 300px;
-  font-size: 14px;
+  font-weight: 400;
+  /* font-size: 14px; */
+  font-size: var(--font-size-md);
   color: #ffffff;
 }
 
@@ -408,11 +419,24 @@ span {
   color: #ffffff;
   box-shadow: 11px 28px 50px rgba(20, 78, 90, 0.2);
   border-radius: 15px;
-  font-weight: 500;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
 }
 
 .leftHeroContainer button:active {
   transform: translate(0, 3px);
+}
+
+.leftHeroContainer .hero-breakText {
+  display: block;
+  font-family: inherit;
+  font-size: var(--font-size-xxl);
+  color: #ffffff;
+}
+
+.leftHeroContainer .hero-gradText {
+  font-size: inherit;
 }
 
 .mainSection {
@@ -490,14 +514,14 @@ span {
 
 .recomendationsCard p {
   font-weight: 300;
-  font-size: clamp(9px, 0.8vw, 14px);;
-  color: #4D4D4D;
+  font-size: clamp(9px, 0.8vw, 14px);
+  color: #4d4d4d;
 }
 
 .recomendationsCard h4 {
   font-family: "Montserrat";
   font-weight: 700;
-  font-size: clamp(14px, 1.3vw, 19px);;
+  font-size: clamp(14px, 1.3vw, 19px);
   background: linear-gradient(98.81deg, #ffa100 -0.82%, #ff005c 101.53%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -511,7 +535,6 @@ span {
   border-radius: 17.5px;
   color: #ffffff;
 }
-
 
 /*CATEGORIAS*/
 .categorias-h3 {
@@ -554,11 +577,11 @@ span {
   flex: 1 1 130px;
 }
 
-.categoriesCard:hover{
+.categoriesCard:hover {
   transform: translateY(-5px);
 }
-.active{
-  background: #4D4D4D;
+.active {
+  background: #4d4d4d;
 }
 
 .categoriesCard img {
@@ -638,7 +661,7 @@ span {
   font-family: "Montserrat";
   font-weight: 300;
   font-size: clamp(9px, 0.9vw, 10px);
-  color: #4D4D4D;
+  color: #4d4d4d;
 }
 
 .productCardPrice {
@@ -684,7 +707,8 @@ span {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 50px;
+  gap: 25px;
+  flex-wrap: wrap;
 }
 
 .linksContainer a {
@@ -707,4 +731,83 @@ footer h2 {
   font-size: clamp(12px, 1.2vw, 17px);
   text-align: center;
   color: #ffffff;
+}
+
+@media screen and (max-width: 768px) {
+  .headerNav {
+    display: flex;
+    justify-content: space-around;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    height: 65px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    background: linear-gradient(
+      90deg,
+      #ffa100 10.93%,
+      rgba(251, 16, 61) 99.05%
+    );
+  }
+
+  .bloc-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+  }
+
+  .logo_container img {
+    display: none;
+  }
+
+  .headerSection {
+    padding: 0;
+  }
+
+  .footerSection h2 {
+    margin-bottom: 74px;
+  }
+
+  .headerNav p {
+    display: none;
+  }
+
+  .headerNav > button,
+  a > i {
+    background-color: transparent;
+    color: #fefefe;
+  }
+
+  .headerNav > button > i > div {
+    background: linear-gradient(98.81deg, #ffa100 -0.82%, #fb103d 101.53%);
+  }
+
+  .heroSection {
+    flex-direction: column;
+  }
+
+  .heroSection img {
+    display: none;
+  }
+
+  .leftHeroContainer {
+    align-items: center;
+    width: 100%;
+  }
+
+  .hero-gradText {
+    background-color: red;
+    background-image: linear-gradient(
+      98.81deg,
+      #ffa100 -0.82%,
+      #fb103d 101.53%
+    );
+    background-size: 100%;
+    background-repeat: repeat;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-background-clip: text;
+    -moz-text-fill-color: transparent;
+  }
 }
