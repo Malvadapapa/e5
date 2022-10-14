@@ -14,8 +14,9 @@
 
   <body>
     <header class="headerSection">
-      <img src="assets/img/zappi-icon.png" alt="" class="headerImg" />
-
+      <div class="logo_container">
+        <img src="assets/img/zappi-icon.png" alt="" class="headerImg" />
+      </div>
       <nav class="headerNav">
         <a href="index.html">
           <i class="fa-solid fa-house"></i>
@@ -23,19 +24,17 @@
         </a>
 
         <button>
-          <i id="carrito_icon" class="fa-solid fa-cart-shopping"></i>
-          <div id="cartArticlesCounter">3</div>
+          <i id="carrito_icon" class="fa-solid fa-cart-shopping"><div id="cartArticlesCounter">3</div></i>
         </button>
 
         <a href="#">
           <i class="fa-solid fa-user"></i>
         </a>
       </nav>
+
     </header>
-
+    <div class="container">
     <section class="cartSection">
-      <div class="divOpaco"></div>
-
 
         <div class="cartContainer">
             <i class="fa-solid fa-xmark"></i>
@@ -44,7 +43,7 @@
             <div class="productsCartContainer"> 
 
                     <div class="productsCartCard">
-                      <img src="/pizza.jpeg" alt="">
+                      <img src="/assets/img/Photo Menu-2.png" alt="">
 
                       <div class="productsCartDatos">
                         <h3>Titulo Generico</h3>
@@ -52,11 +51,12 @@
                         <h4>$5184</h4>
                       </div>
                       <div class="productsCartQuantityControler">
-                        <button id="cartCardBtnAdd">+</button>
-                        <h3>3</h3>
                         <button id="cartCardBtnRemove">-</button>
+                        <h3>1</h3>
+                        <button id="cartCardBtnAdd">+</button>
                        </div>
                      </div>
+
              </div>
  
 
@@ -82,23 +82,20 @@
                     </a>
                 </div>
 
-            
-
-        </div>
 
     </section> 
 
     <section class="heroSection">
       <div class="leftHeroContainer">
         <h1>Si tenes Zappi,</h1>
-        <h1>Tenes Nucba.</h1>
+        <h2>tenes Nucba.</h2>
 
         <p>
           Busca lo que quieras y Nucba te lo lleva al instante, no te quedes sin
           comida!
         </p>
 
-        <button id="heroSeeMoreBtn">VER MAS</button>
+        <button id="heroSeeMoreBtn">VER MÁS</button>
       </div>
 
       <img src="assets/img/hero-img.png" alt="" class="heroImg" />
@@ -139,47 +136,47 @@
       </div>
       <h3 class="categorias-h3">Categorías</h3>
       <div class="categoriesContainer">
-        <div class="categoriesCard" id="CategoriesPopular">
+        <button class="categoriesCard active" id="CategoriesPopular">
           <img src="assets/img/populares.png" alt="" />
           <p>Populares</p>
           <hr />
-        </div>
+        </button>
 
-        <div class="categoriesCard" id="CategoriesPizzas">
+        <button class="categoriesCard" id="CategoriesPizzas">
           <img src="assets/img/pizzas.png" alt="" />
           <p>Pizzas</p>
           <hr />
-        </div>
+        </button>
 
-        <div class="categoriesCard" id="Categoriesburgers">
+        <button class="categoriesCard" id="Categoriesburgers">
           <img src="assets/img/hamburguesa.png" alt="" />
           <p>Hamburguesas</p>
           <hr />
-        </div>
+        </button>
 
-        <div class="categoriesCard" id="CategoriesNapaPuki">
+        <button class="categoriesCard" id="CategoriesNapaPuki">
           <img src="assets/img/napapuki.png" alt="" />
           <p>NapaPuki</p>
           <hr />
-        </div>
+        </button>
 
-        <div class="categoriesCard" id="CategoriesWraps">
+        <button class="categoriesCard" id="CategoriesWraps">
           <img src="assets/img/buritto.png" alt="" />
           <p>Wraps</p>
           <hr />
-        </div>
+        </button>
 
-        <div class="categoriesCard" id="CategoriesMexican">
+        <button class="categoriesCard" id="CategoriesMexican">
           <img src="assets/img/mexican.png" alt="" />
           <p>Mexican Food</p>
           <hr />
-        </div>
+        </button>
 
-        <div class="categoriesCard" id="Categoriesshakes">
+        <button class="categoriesCard" id="Categoriesshakes">
           <img src="assets/img/bebidas.png" alt="" />
           <p>Batidos</p>
           <hr />
-        </div>
+        </button>
       </div>
       <h3 class="populares">Los más populares</h3>
       <div class="productsContainer" id="products">
@@ -190,7 +187,6 @@
             <h3>La Mr. Pit</h3>
             <p>Solo para expertos</p>
           </div>
-
           <div class="productCardPrice">
             <p>$350</p>
             <button id="productCardBtn">Agregar</button>
@@ -300,6 +296,7 @@
         Hecho con <i class="fa-solid fa-heart"></i> en <span>NUCBAZAPPI</span>
       </h2>
     </footer>
+    </div>
 
     <script src="index.js"></script>
   </body>
