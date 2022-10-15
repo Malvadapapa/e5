@@ -53,12 +53,18 @@ const renderFilter = async (category) => {
 
   productContainer.innerHTML = "";
 
-  let producto = productsList.map(renderProducts).join("");
+  productsList.map(renderProducts).join("");
 };
 
 const applyFilter = (e) => {
   renderFilter(e.target.dataset.category);
-  if (!e.target.dataset.classList.contains("category")) return;
+  if (
+    !e.target.matches(".categoriesCard") &&
+    !e.target.matches(".categoriesCard img") &&
+    !e.target.matches(".categoriesCard hr")
+  )
+    return;
+
   categoryState(e.target.dataset.category);
   if (!e.target.dataset.category) {
     productContainer.innerHTML = "";
