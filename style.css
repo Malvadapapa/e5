@@ -616,7 +616,6 @@ span {
 .productsContainer {
   display: flex;
   gap: 40px;
-  flex-wrap: wrap;
   width: 100%;
   justify-content: center;
   align-items: center;
@@ -626,6 +625,7 @@ span {
 .productCard {
   width: 100%;
   max-width: 200px;
+  min-width: 200px;
   height: 160px;
   display: flex;
   flex-direction: column;
@@ -733,7 +733,7 @@ footer h2 {
   color: #ffffff;
 }
 
-@media screen and (max-width: 768px) {
+/* @media screen and (max-width: 768px) {
   .headerNav {
     display: flex;
     justify-content: space-around;
@@ -810,4 +810,4 @@ footer h2 {
     -moz-background-clip: text;
     -moz-text-fill-color: transparent;
   }
-}
+} */

@@ -187,7 +187,7 @@
     "Precio": 900,
     "Popular": true,
     "Stock": 100,
-    "img": "./assets/img/PhotoHambur-1"
+    "img": "./assets/img/PhotoHambur-1.png"
   },
   {
     "Categoria": "Hamburguesas",
@@ -197,7 +197,7 @@
     "Precio": 1000,
     "Popular": true,
     "Stock": 100,
-    "img": "./assets/img/PhotoHambur-2"
+    "img": "./assets/img/PhotoHambur-2.png"
   },
   {
     "Categoria": "Hamburguesas",
@@ -207,7 +207,7 @@
     "Precio": 2500,
     "Popular": true,
     "Stock": 100,
-    "img": "./assets/img/PhotoHambur-3"
+    "img": "./assets/img/PhotoHambur-3.png"
   },
   {
     "Categoria": "Hamburguesas",
@@ -217,7 +217,7 @@
     "Precio": 250,
     "Popular": true,
     "Stock": 100,
-    "img": "./assets/img/PhotoHambur-4"
+    "img": "./assets/img/PhotoHambur-4.png"
   },
   {
     "Categoria": "Hamburguesas",
@@ -227,7 +227,7 @@
     "Precio": 490,
     "Popular": true,
     "Stock": 100,
-    "img": "./assets/img/PhotoHambur-5"
+    "img": "./assets/img/PhotoHambur-5.png"
   },
   {
     "Categoria": "Hamburguesas",
@@ -237,7 +237,7 @@
     "Precio": 300,
     "Popular": true,
     "Stock": 100,
-    "img": "./assets/img/PhotoHambur-6"
+    "img": "./assets/img/PhotoHambur-6.png"
   },
   {
     "Categoria": "Hamburguesas",
@@ -247,7 +247,7 @@
     "Precio": 10,
     "Popular": true,
     "Stock": 100,
-    "img": "./assets/img/PhotoHambur-7"
+    "img": "./assets/img/PhotoHambur-7.png"
   },
   {
     "Categoria": "Hamburguesas",
@@ -257,7 +257,7 @@
     "Precio": 1800,
     "Popular": true,
     "Stock": 100,
-    "img": "./assets/img/PhotoHambur-8"
+    "img": "./assets/img/PhotoHambur-8.png"
   },
   {
     "Categoria": "Hamburguesas",
@@ -267,7 +267,7 @@
     "Precio": 700,
     "Popular": true,
     "Stock": 100,
-    "img": "./assets/img/PhotoHambur-9"
+    "img": "./assets/img/PhotoHambur-9.jpg"
   },
   {
     "Categoria": "Hamburguesas",
@@ -277,7 +277,7 @@
     "Precio": 150,
     "Popular": true,
     "Stock": 100,
-    "img": "./assets/img/PhotoHambur-10"
+    "img": "./assets/img/PhotoHambur-10.png"
   },
   {
     "Categoria": "Hamburguesas",
@@ -287,7 +287,7 @@
     "Precio": 600,
     "Popular": true,
     "Stock": 100,
-    "img": "./assets/img/PhotoHambur-11"
+    "img": "./assets/img/PhotoHambur-11.png"
   },
   {
     "Categoria": "Hamburguesas",
@@ -297,7 +297,7 @@
     "Precio": 3000,
     "Popular": true,
     "Stock": 100,
-    "img": "./assets/img/PhotoHambur-12"
+    "img": "./assets/img/PhotoHambur-12.png"
   },
   {
     "Categoria": "Hamburguesas",
@@ -307,7 +307,7 @@
     "Precio": 450,
     "Popular": true,
     "Stock": 100,
-    "img": "./assets/img/PhotoHambur-13"
+    "img": "./assets/img/PhotoHambur-13.png"
   },
   {
     "Categoria": "Hamburguesas",
@@ -317,7 +317,7 @@
     "Precio": "gratis",
     "Popular": true,
     "Stock": 100,
-    "img": "./assets/img/PhotoHambur-14"
+    "img": "./assets/img/PhotoHambur-14.png"
   },
   {
     "Categoria": "Hamburguesas",
@@ -327,7 +327,7 @@
     "Precio": 1470,
     "Popular": true,
     "Stock": 100,
-    "img": "./assets/img/PhotoHambur-15"
+    "img": "./assets/img/PhotoHambur-15.png"
   },
   {
     "Categoria": "Hamburguesas",
@@ -337,7 +337,7 @@
     "Precio": 2150,
     "Popular": true,
     "Stock": 100,
-    "img": "./assets/img/PhotoHambur-16"
+    "img": "./assets/img/PhotoHambur-16.png"
   },
   {
     "Categoria": "Papas Fritas",
@@ -558,5 +558,15 @@
     "Popular": true,
     "Stock": 100,
     "img": "./assets/img/PhotoBatido-5"
+  },
+  {
+    "Categoria": "populares",
+    "id": 56,
+    "Nombre": "La Americana",
+    "Descripcion": "Sensual",
+    "Precio": 610,
+    "Popular": true,
+    "Stock": 100,
+    "img": "./assets/img/PhotoBatido-5.png"
   }
 ]
