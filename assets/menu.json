@@ -561,12 +561,82 @@
   },
   {
     "Categoria": "populares",
-    "id": 56,
-    "Nombre": "La Americana",
-    "Descripcion": "Sensual",
-    "Precio": 610,
+    "id": 1,
+    "Nombre": "La Mr. Pit",
+    "Descripcion": "Solo para expertos",
+    "Precio": 350,
     "Popular": true,
     "Stock": 100,
-    "img": "./assets/img/PhotoBatido-5.png"
+    "img": "./assets/img/PhotoPizza-1.png"
+  },
+  {
+    "Categoria": "populares",
+    "id": 2,
+    "Nombre": "¡Q`Jamone!",
+    "Descripcion": "c/jamón crudo",
+    "Precio": 350,
+    "Popular": true,
+    "Stock": 100,
+    "img": "./assets/img/PhotoPizza-2.png"
+  },
+  {
+    "Categoria": "populares",
+    "id": 3,
+    "Nombre": "La Charly Garcia",
+    "Descripcion": "¡BASTA!",
+    "Precio": 380,
+    "Popular": true,
+    "Stock": 100,
+    "img": "./assets/img/PhotoPizza-3.png"
+  },
+  {
+    "Categoria": "populares",
+    "id": 4,
+    "Nombre": "La Maradona",
+    "Descripcion": "¡Eterna!",
+    "Precio": 1358,
+    "Popular": true,
+    "Stock": 100,
+    "img": "./assets/img/PhotoPizza-4.png"
+  },
+  {
+    "Categoria": "populares",
+    "id": 5,
+    "Nombre": "Picantovich",
+    "Descripcion": "Pica 2 veces",
+    "Precio": 750,
+    "Popular": true,
+    "Stock": 100,
+    "img": "./assets/img/PhotoPizza-5.png"
+  },
+  {
+    "Categoria": "populares",
+    "id": 6,
+    "Nombre": "La Hasbulla",
+    "Descripcion": "En Honor al 1",
+    "Precio": 990,
+    "Popular": true,
+    "Stock": 100,
+    "img": "./assets/img/PhotoPizza-6.png"
+  },
+  {
+    "Categoria": "populares",
+    "id": 7,
+    "Nombre": "Leo Messi",
+    "Descripcion": "¡De pié señores!",
+    "Precio": 10,
+    "Popular": true,
+    "Stock": 100,
+    "img": "./assets/img/PhotoPizza-7.png"
+  },
+  {
+    "Categoria": "populares",
+    "id": 8,
+    "Nombre": "Nick Gi",
+    "Descripcion": "La que desaparece",
+    "Precio": "Gratis",
+    "Popular": true,
+    "Stock": 100,
+    "img": "./assets/img/PhotoPizza-8.png"
   }
 ]

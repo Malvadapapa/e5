@@ -733,7 +733,7 @@ footer h2 {
   color: #ffffff;
 }
 
-/* @media screen and (max-width: 768px) {
+@media screen and (max-width: 768px) {
   .headerNav {
     display: flex;
     justify-content: space-around;
@@ -810,4 +810,4 @@ footer h2 {
     -moz-background-clip: text;
     -moz-text-fill-color: transparent;
   }
-} */
+}
