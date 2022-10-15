@@ -1,16 +1,16 @@
-const productContainer = document.getElementById('products');
+const productContainer = document.getElementById("products");
 
-const titulo = document.querySelector('.populares');
+const titulo = document.querySelector(".populares");
 
-let categoryBtn = document.querySelector('.categoriesCard')
+const categoryBtn = document.querySelector(".categoriesContainer");
 
-const categoriesList = document.querySelectorAll('.category')
+const categoriesList = document.querySelectorAll(".category");
 // let cart = JSON.parse(localStorage.getItem('cart') || []);
 
 const renderProducts = (product) => {
-    const {id, Nombre, Descripcion, Precio, img, Categoria} = product;
-    titulo.textContent = `${Categoria.toUpperCase()}`
-    productContainer.innerHTML += `
+  const { id, Nombre, Descripcion, Precio, img, Categoria } = product;
+  titulo.textContent = `${Categoria.toUpperCase()}`;
+  productContainer.innerHTML += `
     <div class="productCard">
     <img src="${img}" alt="" />
     <div class="productCardDescription">
@@ -25,51 +25,51 @@ const renderProducts = (product) => {
       data-precio="${Precio}"
       data-img="${img}">Agregar</button>
     </div>
-    `
-}
+    `;
+};
 
-const categoryState = (selectedCategory) =>{
-    const categories = [...categoriesList];
-    categories.forEach((categoryBtn) => {
-        if(categoryBtn.dataset.category !== selectedCategory){
-            categoryBtn.classList.remove('active');
-            return
-        }
-        categoryBtn.classList.add('active');
-    })
-
-}
+const categoryState = (selectedCategory) => {
+  const categories = [...categoriesList];
+  categories.forEach((categoryBtn) => {
+    if (categoryBtn.dataset.category !== selectedCategory) {
+      categoryBtn.classList.remove("active");
+      return;
+    }
+    categoryBtn.classList.add("active");
+  });
+};
 
 const changeFilter = (e) => {
-    const selectedCategory = e.target.dataset.category;
-    console.log(e.dataset.category)
-    categoryState(selectedCategory);
-}
+  const selectedCategory = e.target.dataset.category;
+  console.log(e.dataset.category);
+  categoryState(selectedCategory);
+};
 
 const renderFilter = async (category) => {
-    const menu = await request();
-    const productsList = menu.filter(
-        (product) => product.Categoria.toUpperCase() === category.toUpperCase());
-    let producto = productsList.map(renderProducts).join('');
+  const menu = await request();
+  const productsList = menu.filter(
+    (product) => product.Categoria.toUpperCase() === category.toUpperCase()
+  );
 
-}
+  productContainer.innerHTML = "";
+
+  let producto = productsList.map(renderProducts).join("");
+};
 
 const applyFilter = (e) => {
-    renderFilter(e.target.dataset.category)
-    if (!e.target.dataset.classList.contains('category')) return;
-    categoryState(e.target.dataset.category);
-    if(!e.target.dataset.category){
-        productContainer.innerHTML = '';
-        renderFilter();
-    } else {
-        renderFilter(e.target.dataset.category)
-    }
-}
+  renderFilter(e.target.dataset.category);
+  if (!e.target.dataset.classList.contains("category")) return;
+  categoryState(e.target.dataset.category);
+  if (!e.target.dataset.category) {
+    productContainer.innerHTML = "";
+    renderFilter();
+  } else {
+    renderFilter(e.target.dataset.category);
+  }
+};
 
 const init = () => {
-    categoryBtn.addEventListener('click', applyFilter)
-    // renderFilter("Hamburguesas")
+  categoryBtn.addEventListener("click", applyFilter);
+};
 
-}
-
-init()
+init();
