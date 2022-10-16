@@ -35,9 +35,9 @@
       </nav>
     </header>
     <div class="container">
-      <section class="cartSection">
+      <section id="openCart" class="cartSection">
         <div class="cartContainer">
-          <i class="fa-solid fa-xmark"></i>
+          <i class="fa-solid fa-xmark" id="cartClose"></i>
           <h2>Tus productos</h2>
 
           <div class="productsCartContainer">
@@ -195,7 +195,11 @@
             data-category="Mexican Food"
             id="CategoriesMexican"
           >
-            <img src="assets/img/mexican.png" alt="" data-category="Mexican Food" />
+            <img
+              src="assets/img/mexican.png"
+              alt=""
+              data-category="Mexican Food"
+            />
             Mexican Food
             <hr data-category="Mexican Food" />
           </button>

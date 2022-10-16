@@ -3,7 +3,7 @@ const productContainer = document.getElementById("products");
 const titulo = document.querySelector(".populares");
 
 const categoryBtn = document.querySelector(".categoriesContainer");
-const BtnCategory = document.querySelectorAll(".categoriesCard")
+const BtnCategory = document.querySelectorAll(".categoriesCard");
 const categoriesList = document.querySelectorAll(".category");
 // let cart = JSON.parse(localStorage.getItem('cart') || []);
 
@@ -38,7 +38,7 @@ const categoryState = (selectedCategory) => {
   //     BtnCategory.dataset.category.classList.remove("active");
   //     return;
   //   }
-    
+
   //   BtnCategory.classList.add("active");
   // });
 };
@@ -49,18 +49,15 @@ const categoryState = (selectedCategory) => {
 //   categoryState(selectedCategory);
 // };
 
-
-
 const renderFilter = async (category) => {
   const menu = await request();
   const productsList = menu.filter(
     (product) => product.Categoria.toUpperCase() === category.toUpperCase()
   );
-  categoryState(productsList)
+  categoryState(productsList);
   productContainer.innerHTML = "";
 
   productsList.map(renderProducts).join("");
-
 };
 
 const applyFilter = (e) => {
@@ -81,9 +78,22 @@ const applyFilter = (e) => {
   }
 };
 
+////ABRIR Y CERRAR CARRITO
+const carrito = document.getElementById("carrito_icon");
+const cartAbrir = document.getElementById("openCart");
+const cartCerrar = document.getElementById("cartClose");
+
+carrito.addEventListener("click", () => {
+  cartAbrir.style.display = "flex";
+});
+
+cartCerrar.addEventListener("click", () => {
+  cartAbrir.style.display = "none";
+});
+////FIN ABRIR Y CERRAR
+
 const init = () => {
   categoryBtn.addEventListener("click", applyFilter);
-  renderFilter('populares')
+  renderFilter("populares");
 };
-
 init();
