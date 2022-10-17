@@ -23,13 +23,13 @@ const productosEnCarrito = document.getElementById("carritoContainer");
 //Añadir producto
 const agregarProducto = document.getElementById("addProduct");
 //Total
-const total = document.getElementById("total");
+const total = document.getElementById('total');
 //subtotal
 const subTotal = document.getElementById("subTotal");
 //Boton comprar
 const btnComprar = document.getElementById("btnBuy");
 
-const saveLocalStorage = (carrito) => {
+const saveLocalStorage = () => {
   //console.log("cartLS===>", typeof cartLS);
   // ACA, SE CAMBIO JSON.stringify(carrito) / JSON.stringify(carrito);
   localStorage.setItem("cartLS", JSON.stringify(cartLS));
@@ -86,22 +86,21 @@ const renderProducts = (product) => {
     `;
 };
 
-// // CONSEGUIR TOTAL
-// const cartTotal = (e) => {
-//   console.log(e.precio)
-//   return cartLS.reduce((acc, cur) => acc + Number(cur.precio) * Number(cur.cantidad), 0);
+// CONSEGUIR TOTAL
+const cartTotal = () => {
+  return cartLS.reduce((acc, cur) => acc + Number(cur.precio) * Number(cur.cantidad), 0);
 
-// }
+}
 
-// //RENDERIZAR TOTAL
-// const renderTotal = (e) => {
-//   if(!cartLS) return
-//   total.innerHTML = `$ ${cartTotal(e)}`
-// }
+//RENDERIZAR TOTAL
+const renderTotal = () => {
+  total.innerHTML = `$ ${cartTotal()}`
+}
 
 //DESHABILITAR BOTON COMPRAR
 const desactivarBtn = () => {
   if (!cartLS.length) {
+
     btnComprar.classList.add("disabled");
     btnComprar.style.background = "#4d4d4d";
     btnComprar.disabled = false;
@@ -117,12 +116,11 @@ const productData = (id, nombre, precio, img, descripcion) => {
 };
 // Verificar si el producto existe
 const existingCartProduct = (product) => {
-  const result = cartLS.find((item) => item.id === product.id);
+cartLS.find((item) => item.id === product.id);
 };
 
 //Agregar una unidad de producto
 const addUnitProduct = (product) => {
-  //console.log(product);
   cartLS = cartLS.map((cartProduct) => {
     return cartProduct.id === product.id
       ? { ...cartProduct, cantidad: cartProduct.cantidad + 1 }
@@ -132,9 +130,7 @@ const addUnitProduct = (product) => {
 
 //Crear producto para subir
 const createCartProduct = (product) => {
-  //console.log("llegue aca", product);
   cartLS = [...cartLS, { ...product, cantidad: 1 }];
-  //console.log(cartLS);
 };
 
 //AGREGAR AL CARRITO Y AL LS LOS PRODUCTOS
@@ -143,15 +139,13 @@ const addProduct = (e) => {
   const { id, nombre, precio, img, descripcion } = e.target.dataset;
   const product = productData(id, nombre, precio, img, descripcion);
   if (existingCartProduct(product)) {
-    // console.log("llega");
     addUnitProduct(product);
   } else {
     createCartProduct(product);
   }
-  //console.log(product);
-  saveLocalStorage(product);
+  saveLocalStorage();
   renderCart(product);
-  // renderTotal(product)
+  renderTotal(product)
   desactivarBtn();
 };
 
@@ -234,8 +228,10 @@ const init = () => {
   renderFilter("populares");
   productContainer.addEventListener("click", addProduct);
   document.addEventListener("DOMContentLoaded", renderCartProduct);
-  // document.addEventListener("DOMContentLoaded", renderTotal);
+  document.addEventListener("DOMContentLoaded", renderTotal);
   document.addEventListener("DOMContentLoaded", desactivarBtn);
+  document.addEventListener("DOMContentLoaded", renderCart(cartLS));
+
 };
 
 init();

@@ -165,6 +165,16 @@ a > i {
   justify-content: flex-start;
   height: 100%;
   min-height: 500px;
+  overflow-y: scroll;
+}
+
+.productsCartContainer::-webkit-scrollbar{
+  width: 5px;
+  background-color: #ff7a00;
+}
+.productsCartContainer::-webkit-scrollbar-thumb{
+  height: 5px;
+  background-color: #ff005c;
 }
 
 .productsCartCard {
