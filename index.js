@@ -20,24 +20,30 @@ const cartCerrar = document.getElementById("cartClose");
 let cartLS = JSON.parse(localStorage.getItem('cart')) || [];
 //Contenedor de productos agregados
 const productosEnCarrito = document.getElementById('carritoContainer');
+//Añadir producto
+const agregarProducto = document.getElementById('addProduct')
 //Total
-const total = document.getElementById('total')
+const total = document.getElementById('total');
 //subtotal
 const subTotal = document.getElementById('subTotal');
 //Boton comprar
-const btnComprar = document.getElementById('btnBuy')
+const btnComprar = document.getElementById('btnBuy');
+
+const saveLocalStorage = (carrito) => {
+  localStorage.setItem("cartLS", JSON.stringify(carrito));
+};
 
 
 //RENDERIZAR PRODUCTOS EN EL CARRITO
 const renderCartProduct = (productAdd) => {
-  const {id, img, precio, nombre, descripcion, cantidad} = productAdd;
-  return `
+  const {id, img, Precio, Nombre, Descripcion, cantidad} = productAdd;
+  productosEnCarrito.innerHTML += `
   <div class="productsCartCard">
               <img src="${img} alt="" />
               <div class="productsCartDatos">
-                <h3>${nombre}</h3>
-                <p>${descripcion}</p>
-                <h4>$ ${precio}</h4>
+                <h3>${Nombre}</h3>
+                <p>${Descripcion}</p>
+                <h4>$ ${Precio}</h4>
               </div>
               <div class="productsCartQuantityControler">
                 <button id="cartCardBtnRemove" data-id="${id}">-</button>
@@ -46,6 +52,7 @@ const renderCartProduct = (productAdd) => {
               </div>
             </div>
   `
+  return
 }
 //QUE MOSTRAR EN CARRITO
 const renderCart = () => {
@@ -53,8 +60,9 @@ if (!cartLS.length){
   productosEnCarrito.innerHTML = `<p class="empty-msg">No hay productos agregados</p>`;
   return;
 }
-productContainer.innerHTML = cartLS.map(renderCartProduct).join("");
-
+  productContainer.innerHTML = cartLS.map(renderCartProduct).join("");
+  
+  console.log(productContainer)
 }
 
 //FUNCION QUE RENDERIZA LOS PRODUCTOS EN LA SECCION DE PRODUCTOS
@@ -70,19 +78,19 @@ const renderProducts = (product) => {
       </div>
     <div class="productCardPrice">
       <p>$${Precio}</p>
-      <button id="productCardBtn"
-      data-id="${id}"
+      <button class="addProduct" data-id="${id}"
       data-nombre="${Nombre}"
       data-precio="${Precio}"
+      data-descripcion="${Descripcion}"
       data-img="${img}">Agregar</button>
       </div>
     `;
 };
 
-//CONSEGUIR TOTAL
+// CONSEGUIR TOTAL
 const cartTotal = () => {
   cartLS.reduce((acc, cur) => acc + Number(cur.precio) * Number(cur.cantidad), 0);
-  console.log(cartLS)
+
 }
 
 //RENDERIZAR TOTAL
@@ -102,9 +110,45 @@ const desactivarBtn = () => {
   btnComprar.disabled = true
 }
 
+//Armado de producto para subir
+const productData = (id, nombre, precio, img, descripcion) => {
+  return {id, nombre, precio, img, descripcion};
+}
+// Verificar si el producto existe
+const existingCartProduct = (product) => {
+  cartLS.find((item) => item.id === product.id);
+}
+
+//Agregar una unidad de producto
+const addUnitProduct = (product) =>{
+  cartLS = cartLS.map( cartProduct => {
+    return cartProduct.id === product.id 
+  ? {...cartProduct, cantidad: cartProduct.cantidad + 1}
+  : cartProduct
+  })
+}
+
+//Crear producto para subir
+const createCartProduct = (product) => {
+  cartLS = [...cartLS, {...product, cantidad: 1}]
+  console.log(cartLS)
+}
+
 //AGREGAR AL CARRITO Y AL LS LOS PRODUCTOS
-const addProduct = () => {
-  
+const addProduct = (e) => {
+  if (!e.target.classList.contains("addProduct")) return;
+  const {id, nombre, precio, img, descripcion} = e.target.dataset;
+  const product = productData(id, nombre, precio, img, descripcion);
+
+  if(existingCartProduct(product)){
+    addUnitProduct(product)
+  } else{
+    createCartProduct(product)
+  }
+  saveLocalStorage(product);
+  renderCartProduct(product)
+  desactivarBtn()
+
 }
 
 
@@ -185,9 +229,11 @@ const init = () => {
   categoryBtn.addEventListener("click", applyFilter);
   renderMenuToday();
   renderFilter("populares");
-  document.addEventListener("DOMContentLoaded", renderCart);
+  productContainer.addEventListener("click", addProduct);
+  document.addEventListener("DOMContentLoaded", renderCartProduct);
   document.addEventListener("DOMContentLoaded", renderTotal);
   document.addEventListener("DOMContentLoaded", desactivarBtn);
+  console.log(cartLS)
 };
 
 init();
