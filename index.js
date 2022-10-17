@@ -1,3 +1,4 @@
+const recomendation = document.getElementById("recomendations");
 const productContainer = document.getElementById("products");
 
 const titulo = document.querySelector(".populares");
@@ -16,7 +17,7 @@ const renderProducts = (product) => {
     <div class="productCardDescription">
       <h3>${Nombre}</h3>
       <p>${Descripcion}</p>
-    </div>
+      </div>
     <div class="productCardPrice">
       <p>$${Precio}</p>
       <button id="productCardBtn"
@@ -24,7 +25,7 @@ const renderProducts = (product) => {
       data-nombre="${Nombre}"
       data-precio="${Precio}"
       data-img="${img}">Agregar</button>
-    </div>
+      </div>
     `;
 };
 
@@ -51,17 +52,18 @@ const categoryState = (selectedCategory) => {
 
 const renderFilter = async (category) => {
   const menu = await request();
+
   const productsList = menu.filter(
     (product) => product.Categoria.toUpperCase() === category.toUpperCase()
   );
-  categoryState(productsList);
+  productsList;
   productContainer.innerHTML = "";
 
   productsList.map(renderProducts).join("");
 };
 
 const applyFilter = (e) => {
-  renderFilter(e.target.dataset.category);
+  // renderFilter(e.target.dataset.category);--->DA ERROR
   if (
     !e.target.matches(".categoriesCard") &&
     !e.target.matches(".categoriesCard img") &&
@@ -79,21 +81,53 @@ const applyFilter = (e) => {
 };
 
 ////ABRIR Y CERRAR CARRITO
-const carrito = document.getElementById("carrito_icon");
-const cartAbrir = document.getElementById("openCart");
+const cart = document.getElementById("carrito_icon");
+const cartOpen = document.getElementById("openCart");
 const cartCerrar = document.getElementById("cartClose");
 
-carrito.addEventListener("click", () => {
-  cartAbrir.style.display = "flex";
+cart.addEventListener("click", () => {
+  cartOpen.style.display = "flex";
 });
 
-cartCerrar.addEventListener("click", () => {
-  cartAbrir.style.display = "none";
+cartClose.addEventListener("click", () => {
+  cartOpen.style.display = "none";
 });
 ////FIN ABRIR Y CERRAR
 
+const renderMenuToday = () => {
+  window.addEventListener("DOMContentLoaded", async () => {
+    const menuToday = await request();
+    for (let i = 0; i < 3; i++) {
+      let randomMenu = [Math.floor(Math.random() * menuToday.length)];
+      const { Nombre, Descripcion, Precio, img } = menuToday[randomMenu];
+
+      recomendation.innerHTML += `
+      <div class="recomendationsCard">
+      <img src=${img} alt="" />
+      <div class="recomendationsItems">
+      <h3>${Nombre} </h3>
+      <p>${Descripcion} </p>
+      <h4>$ ${Precio}</h4>
+      </div>
+      <button class="btnCart" id="recomendationsCardBtn">Agregar</button>
+      </div>
+      `;
+      ////BOTONES AGREGAR DE "HOY TE RECOMENDAMOS"
+      const addButton = document.querySelectorAll("#recomendationsCardBtn");
+      for (let i = 0; i < addButton.length; i++) {
+        addButton[i].addEventListener("click", () => {
+          alert("traerdelLocal");
+        });
+      }
+    }
+    ////FIN BOTONES AGREGAR
+  });
+};
+
 const init = () => {
   categoryBtn.addEventListener("click", applyFilter);
+  renderMenuToday();
   renderFilter("populares");
 };
+
 init();
