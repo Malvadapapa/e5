@@ -19,24 +19,25 @@ const cartCerrar = document.getElementById("cartClose");
 //LocalStorage
 let cartLS = JSON.parse(localStorage.getItem("cartLS")) || [];
 //Contenedor de productos agregados
-const productosEnCarrito = document.getElementById('carritoContainer');
+const productosEnCarrito = document.getElementById("carritoContainer");
 //Añadir producto
-const agregarProducto = document.getElementById('addProduct')
+const agregarProducto = document.getElementById("addProduct");
 //Total
-const total = document.getElementById('total');
+const total = document.getElementById("total");
 //subtotal
-const subTotal = document.getElementById('subTotal');
+const subTotal = document.getElementById("subTotal");
 //Boton comprar
-const btnComprar = document.getElementById('btnBuy');
+const btnComprar = document.getElementById("btnBuy");
 
 const saveLocalStorage = (carrito) => {
-  localStorage.setItem("cartLS", JSON.stringify(carrito));
+  //console.log("cartLS===>", typeof cartLS);
+  // ACA, SE CAMBIO JSON.stringify(carrito) / JSON.stringify(carrito);
+  localStorage.setItem("cartLS", JSON.stringify(cartLS));
 };
-
 
 //RENDERIZAR PRODUCTOS EN EL CARRITO
 const renderCartProduct = (productAdd) => {
-  const {id, img, precio, nombre, descripcion, cantidad} = productAdd;
+  const { id, img, precio, nombre, descripcion, cantidad } = productAdd;
   return `
   <div class="productsCartCard">
               <img src="${img}" alt="" />
@@ -51,18 +52,16 @@ const renderCartProduct = (productAdd) => {
                 <button id="cartCardBtnAdd" data-id="${id}">+</button>
               </div>
             </div>
-  `
-
-}
+  `;
+};
 //QUE MOSTRAR EN CARRITO
 const renderCart = (product) => {
-if (!cartLS.length){
-  productosEnCarrito.innerHTML = `<p class="empty-msg">No hay productos agregados</p>`;
-  return;
-}
-productosEnCarrito.innerHTML = cartLS.map(renderCartProduct).join("");
-  
-}
+  if (!cartLS.length) {
+    productosEnCarrito.innerHTML = `<p class="empty-msg">No hay productos agregados</p>`;
+    return;
+  }
+  productosEnCarrito.innerHTML = cartLS.map(renderCartProduct).join("");
+};
 
 //FUNCION QUE RENDERIZA LOS PRODUCTOS EN LA SECCION DE PRODUCTOS
 const renderProducts = (product) => {
@@ -102,60 +101,59 @@ const renderProducts = (product) => {
 
 //DESHABILITAR BOTON COMPRAR
 const desactivarBtn = () => {
-  if (!cartLS.length){
+  if (!cartLS.length) {
     btnComprar.classList.add("disabled");
-    btnComprar.style.background ="#4d4d4d"
-    btnComprar.disabled = false
+    btnComprar.style.background = "#4d4d4d";
+    btnComprar.disabled = false;
     return;
   }
-  btnComprar.classList.remove("disabled")
-  btnComprar.disabled = true
-}
+  btnComprar.classList.remove("disabled");
+  btnComprar.disabled = true;
+};
 
 //Armado de producto para subir
 const productData = (id, nombre, precio, img, descripcion) => {
-  return {id, nombre, precio, img, descripcion};
-}
+  return { id, nombre, precio, img, descripcion };
+};
 // Verificar si el producto existe
 const existingCartProduct = (product) => {
   const result = cartLS.find((item) => item.id === product.id);
-}
+};
 
 //Agregar una unidad de producto
-const addUnitProduct = (product) =>{
-  console.log(product)
-  cartLS = cartLS.map( cartProduct => {
-    return cartProduct.id === product.id 
-  ? {...cartProduct, cantidad: cartProduct.cantidad + 1}
-  : cartProduct
-  })
-}
+const addUnitProduct = (product) => {
+  //console.log(product);
+  cartLS = cartLS.map((cartProduct) => {
+    return cartProduct.id === product.id
+      ? { ...cartProduct, cantidad: cartProduct.cantidad + 1 }
+      : cartProduct;
+  });
+};
 
 //Crear producto para subir
 const createCartProduct = (product) => {
-  console.log("llegue aca")
-  cartLS = [...cartLS, {...product, cantidad: 1}]
-  console.log(cartLS)
-}
+  //console.log("llegue aca", product);
+  cartLS = [...cartLS, { ...product, cantidad: 1 }];
+  //console.log(cartLS);
+};
 
 //AGREGAR AL CARRITO Y AL LS LOS PRODUCTOS
 const addProduct = (e) => {
   if (!e.target.classList.contains("addProduct")) return;
-  const {id, nombre, precio, img, descripcion} = e.target.dataset;
+  const { id, nombre, precio, img, descripcion } = e.target.dataset;
   const product = productData(id, nombre, precio, img, descripcion);
-  if(existingCartProduct(product)){
-    console.log("llega")
-    addUnitProduct(product)
-  } else{
-    createCartProduct(product)
+  if (existingCartProduct(product)) {
+    // console.log("llega");
+    addUnitProduct(product);
+  } else {
+    createCartProduct(product);
   }
+  //console.log(product);
   saveLocalStorage(product);
-  renderCart(product)
+  renderCart(product);
   // renderTotal(product)
-  desactivarBtn()
-
-}
-
+  desactivarBtn();
+};
 
 //FUNCION PARA TRAER EL MENU Y FILTRARLO SEGUN LA CATEGORIA QUE RECIBE DEL APPLYFILTER
 const renderFilter = async (category) => {
