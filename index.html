@@ -13,6 +13,7 @@
   </head>
 
   <body>
+    <!-- MENU -->
     <header class="headerSection">
       <div class="logo_container">
         <img src="assets/img/zappi-icon.png" alt="" class="headerImg" />
@@ -35,48 +36,36 @@
       </nav>
     </header>
     <div class="container">
+      <!-- CARRITO -->
       <section id="openCart" class="cartSection">
         <div class="cartContainer">
           <i class="fa-solid fa-xmark" id="cartClose"></i>
           <h2>Tus productos</h2>
 
-          <div class="productsCartContainer">
-            <div class="productsCartCard">
-              <img src="./assets/img/Photo Menu-2.png" alt="" />
+          <div class="productsCartContainer" id="carritoContainer">
 
-              <div class="productsCartDatos">
-                <h3>Titulo Generico</h3>
-                <p>descripcion generica</p>
-                <h4>$5184</h4>
-              </div>
-              <div class="productsCartQuantityControler">
-                <button id="cartCardBtnRemove">-</button>
-                <h3>1</h3>
-                <button id="cartCardBtnAdd">+</button>
-              </div>
-            </div>
           </div>
 
           <div class="subtotalContainer">
             <h3>Subtotal:</h3>
-            <span>4890</span>
+            <span id="subTotal">$</span>
           </div>
           <div class="shippingContainer">
             <h3>Envio:</h3>
-            <span>gratis</span>
+            <span>Gratis</span>
           </div>
           <hr class="linea" />
           <div class="totalContainer">
             <h2>Total:</h2>
-            <span>4890</span>
+            <span id="Total">$ 0</span>
           </div>
           <div class="shopContainer">
-            <button>COMPRAR</button>
+            <button type="button" id="btnBuy">COMPRAR</button>
             <a href="#"> Ver mas productos </a>
           </div>
         </div>
       </section>
-
+      <!-- HERO -->
       <section class="heroSection">
         <div class="leftHeroContainer">
           <h1>
@@ -96,37 +85,12 @@
 
       <main class="mainSection">
         <h2>Hoy te recomendamos</h2>
-
+        <!-- RECOMENDADOS -->
         <div class="recomendationsContainer" id="recomendations">
-          <!-- <div class="recomendationsCard">
-            <img src="assets/img/photomenu1.png" alt="" />
-            <div class="recomendationsItems">
-              <h3>Bennazianna</h3>
-              <p>la mas completa</p>
-              <h4>$ 3650</h4>
-            </div>
-            <button class="btnCart" id="recomendationsCardBtn">Agregar</button>
-          </div>
-          <div class="recomendationsCard">
-            <img src="assets/img/photomenu1.png" alt="" />
-            <div class="recomendationsItems">
-              <h3>Bennazianna</h3>
-              <p>la mas completa</p>
-              <h4>$ 3650</h4>
-            </div>
-            <button class="btnCart" id="recomendationsCardBtn">Agregar</button>
-          </div>
-          <div class="recomendationsCard">
-            <img src="assets/img/photomenu1.png" alt="" />
-            <div class="recomendationsItems">
-              <h3>Bennazianna</h3>
-              <p>la mas completa</p>
-              <h4>$ 3650</h4>
-            </div>
-            <button class="btnCart" id="recomendationsCardBtn">Agregar</button>
-          </div> -->
         </div>
+
         <h3 class="categorias-h3">Categorías</h3>
+        <!-- CATEGORIAS -->
         <div class="categoriesContainer">
           <button
             class="categoriesCard"
@@ -214,10 +178,14 @@
             <hr data-category="batidos" />
           </button>
         </div>
+        <!-- PRODUCTOS -->
         <h3 class="populares">Los más populares</h3>
-        <div class="productsContainer" id="products"></div>
-      </main>
+        <div class="productsContainer" id="products">
 
+        </div>
+
+      </main>
+      <!-- FOOTER -->
       <footer class="footerSection">
         <div class="linksContainer">
           <a href="#">Términos de Uso</a>
