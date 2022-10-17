@@ -17,7 +17,7 @@ const cartOpen = document.getElementById("openCart");
 //Boton cerrar de carrito
 const cartCerrar = document.getElementById("cartClose");
 //LocalStorage
-let cartLS = JSON.parse(localStorage.getItem('cart')) || [];
+let cartLS = JSON.parse(localStorage.getItem("cartLS")) || [];
 //Contenedor de productos agregados
 const productosEnCarrito = document.getElementById('carritoContainer');
 //Añadir producto
@@ -36,14 +36,14 @@ const saveLocalStorage = (carrito) => {
 
 //RENDERIZAR PRODUCTOS EN EL CARRITO
 const renderCartProduct = (productAdd) => {
-  const {id, img, Precio, Nombre, Descripcion, cantidad} = productAdd;
-  productosEnCarrito.innerHTML += `
+  const {id, img, precio, nombre, descripcion, cantidad} = productAdd;
+  return `
   <div class="productsCartCard">
-              <img src="${img} alt="" />
+              <img src="${img}" alt="" />
               <div class="productsCartDatos">
-                <h3>${Nombre}</h3>
-                <p>${Descripcion}</p>
-                <h4>$ ${Precio}</h4>
+                <h3>${nombre}</h3>
+                <p>${descripcion}</p>
+                <h4>$ ${precio}</h4>
               </div>
               <div class="productsCartQuantityControler">
                 <button id="cartCardBtnRemove" data-id="${id}">-</button>
@@ -52,23 +52,23 @@ const renderCartProduct = (productAdd) => {
               </div>
             </div>
   `
-  return
+
 }
 //QUE MOSTRAR EN CARRITO
-const renderCart = () => {
+const renderCart = (product) => {
 if (!cartLS.length){
   productosEnCarrito.innerHTML = `<p class="empty-msg">No hay productos agregados</p>`;
   return;
 }
-  productContainer.innerHTML = cartLS.map(renderCartProduct).join("");
+productosEnCarrito.innerHTML = cartLS.map(renderCartProduct).join("");
   
-  console.log(productContainer)
 }
 
 //FUNCION QUE RENDERIZA LOS PRODUCTOS EN LA SECCION DE PRODUCTOS
 const renderProducts = (product) => {
   const { id, Nombre, Descripcion, Precio, img, Categoria } = product;
   titulo.textContent = `${Categoria.toUpperCase()}`;
+
   productContainer.innerHTML += `
     <div class="productCard">
     <img src="${img}" alt="" />
@@ -87,16 +87,18 @@ const renderProducts = (product) => {
     `;
 };
 
-// CONSEGUIR TOTAL
-const cartTotal = () => {
-  cartLS.reduce((acc, cur) => acc + Number(cur.precio) * Number(cur.cantidad), 0);
+// // CONSEGUIR TOTAL
+// const cartTotal = (e) => {
+//   console.log(e.precio)
+//   return cartLS.reduce((acc, cur) => acc + Number(cur.precio) * Number(cur.cantidad), 0);
 
-}
+// }
 
-//RENDERIZAR TOTAL
-const renderTotal = () => {
-  total.innerHTML = `$ ${cartTotal()}`
-}
+// //RENDERIZAR TOTAL
+// const renderTotal = (e) => {
+//   if(!cartLS) return
+//   total.innerHTML = `$ ${cartTotal(e)}`
+// }
 
 //DESHABILITAR BOTON COMPRAR
 const desactivarBtn = () => {
@@ -116,11 +118,12 @@ const productData = (id, nombre, precio, img, descripcion) => {
 }
 // Verificar si el producto existe
 const existingCartProduct = (product) => {
-  cartLS.find((item) => item.id === product.id);
+  const result = cartLS.find((item) => item.id === product.id);
 }
 
 //Agregar una unidad de producto
 const addUnitProduct = (product) =>{
+  console.log(product)
   cartLS = cartLS.map( cartProduct => {
     return cartProduct.id === product.id 
   ? {...cartProduct, cantidad: cartProduct.cantidad + 1}
@@ -130,6 +133,7 @@ const addUnitProduct = (product) =>{
 
 //Crear producto para subir
 const createCartProduct = (product) => {
+  console.log("llegue aca")
   cartLS = [...cartLS, {...product, cantidad: 1}]
   console.log(cartLS)
 }
@@ -139,14 +143,15 @@ const addProduct = (e) => {
   if (!e.target.classList.contains("addProduct")) return;
   const {id, nombre, precio, img, descripcion} = e.target.dataset;
   const product = productData(id, nombre, precio, img, descripcion);
-
   if(existingCartProduct(product)){
+    console.log("llega")
     addUnitProduct(product)
   } else{
     createCartProduct(product)
   }
   saveLocalStorage(product);
-  renderCartProduct(product)
+  renderCart(product)
+  // renderTotal(product)
   desactivarBtn()
 
 }
@@ -231,9 +236,8 @@ const init = () => {
   renderFilter("populares");
   productContainer.addEventListener("click", addProduct);
   document.addEventListener("DOMContentLoaded", renderCartProduct);
-  document.addEventListener("DOMContentLoaded", renderTotal);
+  // document.addEventListener("DOMContentLoaded", renderTotal);
   document.addEventListener("DOMContentLoaded", desactivarBtn);
-  console.log(cartLS)
 };
 
 init();

@@ -186,6 +186,7 @@ a > i {
   border-radius: 16px;
   width: 62px;
   height: 62px;
+  object-fit: cover;
 }
 
 .productsCartCard h3 {
