@@ -16,19 +16,19 @@ const cart = document.getElementById("carrito_icon");
 const cartOpen = document.getElementById("openCart");
 //Boton cerrar de carrito
 const cartCerrar = document.getElementById("cartClose");
-//LocalStorage
-let cartLS = JSON.parse(localStorage.getItem("cartLS")) || [];
+
 //Contenedor de productos agregados
 const productosEnCarrito = document.getElementById("carritoContainer");
 //Añadir producto
 const agregarProducto = document.getElementById("addProduct");
 //Total
-const total = document.getElementById('total');
+const total = document.getElementById("total");
 //subtotal
 const subTotal = document.getElementById("subTotal");
 //Boton comprar
 const btnComprar = document.getElementById("btnBuy");
-
+//LocalStorage
+let cartLS = JSON.parse(localStorage.getItem("cartLS")) || [];
 const saveLocalStorage = () => {
   //console.log("cartLS===>", typeof cartLS);
   // ACA, SE CAMBIO JSON.stringify(carrito) / JSON.stringify(carrito);
@@ -88,19 +88,20 @@ const renderProducts = (product) => {
 
 // CONSEGUIR TOTAL
 const cartTotal = () => {
-  return cartLS.reduce((acc, cur) => acc + Number(cur.precio) * Number(cur.cantidad), 0);
-
-}
+  return cartLS.reduce(
+    (acc, cur) => acc + Number(cur.precio) * Number(cur.cantidad),
+    0
+  );
+};
 
 //RENDERIZAR TOTAL
 const renderTotal = () => {
-  total.innerHTML = `$ ${cartTotal()}`
-}
+  total.innerHTML = `$ ${cartTotal()}`;
+};
 
 //DESHABILITAR BOTON COMPRAR
 const desactivarBtn = () => {
   if (!cartLS.length) {
-
     btnComprar.classList.add("disabled");
     btnComprar.style.background = "#4d4d4d";
     btnComprar.disabled = false;
@@ -116,10 +117,10 @@ const productData = (id, nombre, precio, img, descripcion) => {
 };
 // Verificar si el producto existe
 const existingCartProduct = (product) => {
-let result = cartLS.find((item) => item.id === product.id);
-if (result){
-  return true;
-}
+  let result = cartLS.find((item) => item.id === product.id);
+  if (result) {
+    return true;
+  }
 };
 
 //Agregar una unidad de producto
@@ -137,15 +138,15 @@ const createCartProduct = (product) => {
 };
 
 //Mensaje de alerta
-const showAlert = () =>{
+const showAlert = () => {
   Swal.fire({
-    title: '¡Producto Añadido!',
-    imageUrl: './assets/img/hasbupizza.gif',
+    title: "¡Producto Añadido!",
+    imageUrl: "./assets/img/hasbupizza.gif",
     imageWidth: 150,
     imageHeight: 100,
-    imageAlt: 'Hasbullapizza',
-  })
-}
+    imageAlt: "Hasbullapizza",
+  });
+};
 //AGREGAR AL CARRITO Y AL LS LOS PRODUCTOS
 const addProduct = (e) => {
   if (!e.target.classList.contains("addProduct")) return;
@@ -158,7 +159,7 @@ const addProduct = (e) => {
   }
   saveLocalStorage();
   renderCart(product);
-  renderTotal(product)
+  renderTotal(product);
   desactivarBtn();
   showAlert();
 };
@@ -195,7 +196,7 @@ const applyFilter = (e) => {
   }
 };
 
-////FUNCION ABRIR Y CERRAR CARRITO *FALTA QUE SE CIERRE CUANDO CLICKEAS AFUERA
+////FUNCION ABRIR Y CERRAR CARRITO
 cart.addEventListener("click", () => {
   cartOpen.style.display = "flex";
 });
@@ -204,6 +205,12 @@ cartClose.addEventListener("click", () => {
   cartOpen.style.display = "none";
 });
 ////FIN ABRIR Y CERRAR
+///FUNCION CERRAR CARRITO CUANDO HACES CLICK AFUERA
+const closeOnClick = (e) => {
+  if (!e.target.classList.contains("cartSection")) return;
+  cartOpen.style.display = "none";
+};
+////FIN CERRAR CARRITO CUANDO HACES CLICK AFUERA
 
 //FUNCION PARA MOSTRAR ALEATORIAMENTE PRODUCTOS RECOMENDADOS CON CADA CARGA DE PAGINA
 const renderMenuToday = () => {
@@ -245,7 +252,7 @@ const init = () => {
   document.addEventListener("DOMContentLoaded", renderTotal);
   document.addEventListener("DOMContentLoaded", desactivarBtn);
   document.addEventListener("DOMContentLoaded", renderCart(cartLS));
-
+  cartOpen.addEventListener("click", closeOnClick);
 };
 
 init();
