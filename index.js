@@ -116,7 +116,10 @@ const productData = (id, nombre, precio, img, descripcion) => {
 };
 // Verificar si el producto existe
 const existingCartProduct = (product) => {
-cartLS.find((item) => item.id === product.id);
+let result = cartLS.find((item) => item.id === product.id);
+if (result){
+  return true;
+}
 };
 
 //Agregar una unidad de producto
@@ -133,6 +136,16 @@ const createCartProduct = (product) => {
   cartLS = [...cartLS, { ...product, cantidad: 1 }];
 };
 
+//Mensaje de alerta
+const showAlert = () =>{
+  Swal.fire({
+    title: '¡Producto Añadido!',
+    imageUrl: './assets/img/hasbupizza.gif',
+    imageWidth: 150,
+    imageHeight: 100,
+    imageAlt: 'Hasbullapizza',
+  })
+}
 //AGREGAR AL CARRITO Y AL LS LOS PRODUCTOS
 const addProduct = (e) => {
   if (!e.target.classList.contains("addProduct")) return;
@@ -147,6 +160,7 @@ const addProduct = (e) => {
   renderCart(product);
   renderTotal(product)
   desactivarBtn();
+  showAlert();
 };
 
 //FUNCION PARA TRAER EL MENU Y FILTRARLO SEGUN LA CATEGORIA QUE RECIBE DEL APPLYFILTER

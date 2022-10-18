@@ -829,4 +829,22 @@ footer h2 {
   }
 }
 
-
+.swal2-container.swal2-center>.swal2-popup{
+  background-color: #131415;
+  width: 250px;
+    height: 300px;
+    border-radius: 10px;
+}
+.swal2-title{
+  font-size: 20px;
+  color: #fefefe;
+}
+.swal2-styled.swal2-confirm{
+  background: #4d4d4d;
+}
+.swal2-actions:not(.swal2-loading) .swal2-styled:hover{
+  background: linear-gradient(
+    90deg,
+    #ffa100 10.93%,
+    rgba(251, 16, 61) 99.05%)
+}
