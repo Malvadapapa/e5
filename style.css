@@ -258,7 +258,7 @@ a > i {
   gap: 15px;
 }
 
-#cartCardBtnRemove {
+.down{
   width: 26px;
   height: 26px;
   border: none;
@@ -276,7 +276,7 @@ a > i {
   cursor: pointer;
 }
 
-#cartCardBtnAdd {
+.up {
   width: 26px;
   height: 26px;
   border: none;
