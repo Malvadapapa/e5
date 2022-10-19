@@ -48,9 +48,9 @@ const renderCartProduct = (productAdd) => {
                 <h4>$ ${precio}</h4>
               </div>
               <div class="productsCartQuantityControler">
-                <button id="cartCardBtnRemove" data-id="${id}">-</button>
+                <button data-id="${id}" class="quantity-handler down" >-</button>
                 <h3>${cantidad}</h3>
-                <button id="cartCardBtnAdd" data-id="${id}">+</button>
+                <button data-id="${id}" class="quantity-handler up" >+</button>
               </div>
             </div>
   `;
@@ -133,6 +133,7 @@ const addUnitProduct = (product) => {
   });
 };
 
+
 //Crear producto para subir
 const createCartProduct = (product) => {
   cartLS = [...cartLS, { ...product, cantidad: 1 }];
@@ -148,6 +149,8 @@ const showAlert = () => {
     imageAlt: "Hasbullapizza",
   });
 };
+
+
 //AGREGAR AL CARRITO Y AL LS LOS PRODUCTOS
 const addProduct = (e) => {
   if (!e.target.classList.contains("addProduct")) return;
@@ -158,14 +161,60 @@ const addProduct = (e) => {
   } else {
     createCartProduct(product);
   }
+
+  showAlert();
   saveLocalStorage();
   renderCart(product);
   renderTotal(product);
   desactivarBtn();
-  showAlert();
-
 
 };
+
+///LOGICA DEL BOTON AGREGAR Y QUITAR ELEMENTOS DEL CARRITO
+const removeProductFromCart = (existingProduct) =>{
+cartLS = cartLS.filter(product => product.id !== existingProduct.id)
+saveLocalStorage();
+renderCart(product);
+renderTotal(product);
+desactivarBtn();
+}
+
+const sustractProductUnit = (existingProduct) =>{
+  cartLS = cartLS.map(cartProduct => {
+    return cartProduct.id === existingProduct.id ? {
+      ...cartProduct, cantidad: cartProduct.cantidad - 1 }
+    : cartProduct;
+  });
+};
+const handlePlusBtn = (id) =>{
+const existingCartProduct = cartLS.find((item) => item.id === id)
+addUnitProduct(existingCartProduct)
+};
+
+const handleMinusBtn = (id) => {
+  const existingCartProduct = cartLS.find(item => item.id === id)
+  if(existingCartProduct.cantidad === 1){
+    if(confirm("¿Esta seguro que desea eliminar el producto del Carrito de compras?")){
+      removeProductFromCart(existingCartProduct)
+    }
+return
+  }
+  sustractProductUnit(existingCartProduct)
+}
+
+const handleQuantity = (e) =>{
+if (e.target.classList.contains("down")){
+  handleMinusBtn(e.target.dataset.id)
+} else if (e.target.classList.contains("up")){
+  handlePlusBtn(e.target.dataset.id)
+}
+
+saveLocalStorage();
+renderCart(product);
+renderTotal(product);
+desactivarBtn();
+
+}
 
 //FUNCION PARA TRAER EL MENU Y FILTRARLO SEGUN LA CATEGORIA QUE RECIBE DEL APPLYFILTER
 const renderFilter = async (category) => {
@@ -262,6 +311,7 @@ const init = () => {
   document.addEventListener("DOMContentLoaded", desactivarBtn);
   document.addEventListener("DOMContentLoaded", renderCart(cartLS));
   cartOpen.addEventListener("click", closeOnClick);
+  productosEnCarrito.addEventListener("click", handleQuantity);
 };
 
 init();
