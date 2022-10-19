@@ -52,7 +52,7 @@ const renderCartProduct = (productAdd) => {
                 <h3>${cantidad}</h3>
                 <button data-id="${id}" class="quantity-handler up" >+</button>
               </div>
-            </div>
+            </div>   
   `;
 };
 //QUE MOSTRAR EN CARRITO
@@ -210,8 +210,8 @@ if (e.target.classList.contains("down")){
 }
 
 saveLocalStorage();
-renderCart(product);
-renderTotal(product);
+renderCart(cartLS);
+renderTotal(cartLS);
 desactivarBtn();
 
 }
