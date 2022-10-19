@@ -105,14 +105,14 @@ const desactivarBtn = () => {
   if (!cartLS.length) {
     btnComprar.classList.add("disabled");
     btnComprar.style.background = "#4d4d4d";
-    btnComprar.disabled = false;
+
     return;
   }
   btnComprar.classList.remove("disabled");
-  btnComprar.disabled = true;
+  btnComprar.style.background =
+    "linear-gradient(98.81deg, #ffa100 -0.82%, #fb103d 101.53%)";
 };
 
-//Armado de producto para subir
 const productData = (id, nombre, precio, img, descripcion) => {
   return { id, nombre, precio, img, descripcion };
 };
@@ -173,7 +173,7 @@ const addProduct = (e) => {
   saveLocalStorage();
   renderCart(product);
   renderTotal(product);
-  desactivarBtn();
+  desactivarBtn(btnComprar);
 };
 
 ///LOGICA DEL BOTON AGREGAR Y QUITAR ELEMENTOS DEL CARRITO
@@ -314,6 +314,7 @@ const resetCartItem = () => {
   saveLocalStorage();
   renderCart(cartLS);
   renderTotal(cartLS);
+  desactivarBtn(btnComprar);
 };
 
 const compraRealizada = () => {
@@ -324,6 +325,7 @@ const compraRealizada = () => {
     showAlert2();
   }
 };
+
 // Fin funcion comprar
 const init = () => {
   categoryBtn.addEventListener("click", applyFilter);
