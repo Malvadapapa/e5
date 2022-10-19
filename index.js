@@ -29,6 +29,7 @@ const subTotal = document.getElementById("subTotal");
 const btnComprar = document.getElementById("btnBuy");
 //LocalStorage
 let cartLS = JSON.parse(localStorage.getItem("cartLS")) || [];
+
 const saveLocalStorage = () => {
   //console.log("cartLS===>", typeof cartLS);
   // ACA, SE CAMBIO JSON.stringify(carrito) / JSON.stringify(carrito);
@@ -162,6 +163,8 @@ const addProduct = (e) => {
   renderTotal(product);
   desactivarBtn();
   showAlert();
+
+
 };
 
 //FUNCION PARA TRAER EL MENU Y FILTRARLO SEGUN LA CATEGORIA QUE RECIBE DEL APPLYFILTER
@@ -242,6 +245,12 @@ const renderMenuToday = () => {
     ////FIN BOTONES AGREGAR
   });
 };
+
+
+
+
+
+
 
 const init = () => {
   categoryBtn.addEventListener("click", applyFilter);
