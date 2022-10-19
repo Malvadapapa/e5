@@ -133,7 +133,6 @@ const addUnitProduct = (product) => {
   });
 };
 
-
 //Crear producto para subir
 const createCartProduct = (product) => {
   cartLS = [...cartLS, { ...product, cantidad: 1 }];
@@ -149,7 +148,15 @@ const showAlert = () => {
     imageAlt: "Hasbullapizza",
   });
 };
-
+const showAlert2 = () => {
+  Swal.fire({
+    title: "¡Compra Realizada!",
+    imageUrl: "./assets/img/GIF-Simpsons.gif",
+    imageWidth: 150,
+    imageHeight: 100,
+    imageAlt: "Simpsons",
+  });
+};
 
 //AGREGAR AL CARRITO Y AL LS LOS PRODUCTOS
 const addProduct = (e) => {
@@ -167,54 +174,59 @@ const addProduct = (e) => {
   renderCart(product);
   renderTotal(product);
   desactivarBtn();
-
 };
 
 ///LOGICA DEL BOTON AGREGAR Y QUITAR ELEMENTOS DEL CARRITO
-const removeProductFromCart = (existingProduct) =>{
-cartLS = cartLS.filter(product => product.id !== existingProduct.id)
-saveLocalStorage();
-renderCart(product);
-renderTotal(product);
-desactivarBtn();
-}
+const removeProductFromCart = (existingProduct) => {
+  cartLS = cartLS.filter((product) => product.id !== existingProduct.id);
+  saveLocalStorage();
+  renderCart(product);
+  renderTotal(product);
+  desactivarBtn();
+};
 
-const sustractProductUnit = (existingProduct) =>{
-  cartLS = cartLS.map(cartProduct => {
-    return cartProduct.id === existingProduct.id ? {
-      ...cartProduct, cantidad: cartProduct.cantidad - 1 }
-    : cartProduct;
+const sustractProductUnit = (existingProduct) => {
+  cartLS = cartLS.map((cartProduct) => {
+    return cartProduct.id === existingProduct.id
+      ? {
+          ...cartProduct,
+          cantidad: cartProduct.cantidad - 1,
+        }
+      : cartProduct;
   });
 };
-const handlePlusBtn = (id) =>{
-const existingCartProduct = cartLS.find((item) => item.id === id)
-addUnitProduct(existingCartProduct)
+const handlePlusBtn = (id) => {
+  const existingCartProduct = cartLS.find((item) => item.id === id);
+  addUnitProduct(existingCartProduct);
 };
 
 const handleMinusBtn = (id) => {
-  const existingCartProduct = cartLS.find(item => item.id === id)
-  if(existingCartProduct.cantidad === 1){
-    if(confirm("¿Esta seguro que desea eliminar el producto del Carrito de compras?")){
-      removeProductFromCart(existingCartProduct)
+  const existingCartProduct = cartLS.find((item) => item.id === id);
+  if (existingCartProduct.cantidad === 1) {
+    if (
+      confirm(
+        "¿Esta seguro que desea eliminar el producto del Carrito de compras?"
+      )
+    ) {
+      removeProductFromCart(existingCartProduct);
     }
-return
+    return;
   }
-  sustractProductUnit(existingCartProduct)
-}
+  sustractProductUnit(existingCartProduct);
+};
 
-const handleQuantity = (e) =>{
-if (e.target.classList.contains("down")){
-  handleMinusBtn(e.target.dataset.id)
-} else if (e.target.classList.contains("up")){
-  handlePlusBtn(e.target.dataset.id)
-}
+const handleQuantity = (e) => {
+  if (e.target.classList.contains("down")) {
+    handleMinusBtn(e.target.dataset.id);
+  } else if (e.target.classList.contains("up")) {
+    handlePlusBtn(e.target.dataset.id);
+  }
 
-saveLocalStorage();
-renderCart(cartLS);
-renderTotal(cartLS);
-desactivarBtn();
-
-}
+  saveLocalStorage();
+  renderCart(cartLS);
+  renderTotal(cartLS);
+  desactivarBtn();
+};
 
 //FUNCION PARA TRAER EL MENU Y FILTRARLO SEGUN LA CATEGORIA QUE RECIBE DEL APPLYFILTER
 const renderFilter = async (category) => {
@@ -295,12 +307,24 @@ const renderMenuToday = () => {
   });
 };
 
+// Funcion boton comprar realizada
 
+const resetCartItem = () => {
+  cartLS = [];
+  saveLocalStorage();
+  renderCart(cartLS);
+  renderTotal(cartLS);
+};
 
-
-
-
-
+const compraRealizada = () => {
+  if (!cartLS.length) return;
+  if (window.confirm("deseas comprar?")) {
+    resetCartItem();
+    alert("la compra funco perrito");
+    showAlert2();
+  }
+};
+// Fin funcion comprar
 const init = () => {
   categoryBtn.addEventListener("click", applyFilter);
   renderMenuToday();
@@ -312,6 +336,7 @@ const init = () => {
   document.addEventListener("DOMContentLoaded", renderCart(cartLS));
   cartOpen.addEventListener("click", closeOnClick);
   productosEnCarrito.addEventListener("click", handleQuantity);
+  btnComprar.addEventListener("click", compraRealizada);
 };
 
 init();
