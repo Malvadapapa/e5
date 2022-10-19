@@ -148,6 +148,8 @@ const showAlert = () => {
     imageAlt: "Hasbullapizza",
   });
 };
+//Mensaje de alerta 2
+
 const showAlert2 = () => {
   Swal.fire({
     title: "¡Compra Realizada!",
