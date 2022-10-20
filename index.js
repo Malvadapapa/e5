@@ -182,8 +182,8 @@ const addProduct = (e) => {
 const removeProductFromCart = (existingProduct) => {
   cartLS = cartLS.filter((product) => product.id !== existingProduct.id);
   saveLocalStorage();
-  renderCart(product);
-  renderTotal(product);
+  renderCart(cartLS);
+  renderTotal(cartLS);
   desactivarBtn();
 };
 

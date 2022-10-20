@@ -543,7 +543,7 @@ span {
   background-clip: text;
 }
 
-#recomendationsCardBtn {
+.btnCart {
   padding: 2% 6%;
   font-size: 10px;
   background: linear-gradient(98.81deg, #ffa100 -0.82%, #ff005c 101.53%);
