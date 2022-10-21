@@ -292,7 +292,7 @@ const renderMenuToday = () => {
       <div class="recomendationsItems">
       <h3>${Nombre} </h3>
       <p>${Descripcion} </p>
-      <h4>$ ${Precio}</h4>
+      <h4>$ ${Precio === 0 ?"Gratis": Precio}</h4>
       </div>
       <button class="addProduct btnCart" data-id="${id}"
       data-nombre="${Nombre}"
