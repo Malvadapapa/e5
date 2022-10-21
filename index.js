@@ -16,7 +16,8 @@ const cart = document.getElementById("carrito_icon");
 const cartOpen = document.getElementById("openCart");
 //Boton cerrar de carrito
 const cartCerrar = document.getElementById("cartClose");
-
+//Boton agregar desde recomendados
+const addButton = document.getElementById(".btnCart");
 //Contenedor de productos agregados
 const productosEnCarrito = document.getElementById("carritoContainer");
 //Añadir producto
@@ -56,7 +57,7 @@ const renderCartProduct = (productAdd) => {
   `;
 };
 //QUE MOSTRAR EN CARRITO
-const renderCart = (product) => {
+const renderCart = () => {
   if (!cartLS.length) {
     productosEnCarrito.innerHTML = `<p class="empty-msg">No hay productos agregados</p>`;
     return;
@@ -68,7 +69,6 @@ const renderCart = (product) => {
 const renderProducts = (product) => {
   const { id, Nombre, Descripcion, Precio, img, Categoria } = product;
   titulo.textContent = `${Categoria.toUpperCase()}`;
-
   productContainer.innerHTML += `
     <div class="productCard">
     <img src="${img}" alt="" />
@@ -90,9 +90,7 @@ const renderProducts = (product) => {
 // CONSEGUIR TOTAL
 const cartTotal = () => {
   return cartLS.reduce(
-    (acc, cur) => acc + Number(cur.precio) * Number(cur.cantidad),
-    0
-  );
+    (acc, cur) => acc + Number(cur.precio) * Number(cur.cantidad),0 );
 };
 
 //RENDERIZAR TOTAL
@@ -116,6 +114,7 @@ const desactivarBtn = () => {
 const productData = (id, nombre, precio, img, descripcion) => {
   return { id, nombre, precio, img, descripcion };
 };
+
 // Verificar si el producto existe
 const existingCartProduct = (product) => {
   let result = cartLS.find((item) => item.id === product.id);
@@ -160,6 +159,8 @@ const showAlert2 = () => {
   });
 };
 
+
+
 //AGREGAR AL CARRITO Y AL LS LOS PRODUCTOS
 const addProduct = (e) => {
   if (!e.target.classList.contains("addProduct")) return;
@@ -170,11 +171,10 @@ const addProduct = (e) => {
   } else {
     createCartProduct(product);
   }
-
   showAlert();
   saveLocalStorage();
-  renderCart(product);
-  renderTotal(product);
+  renderCart();
+  renderTotal(cartLS);
   desactivarBtn(btnComprar);
 };
 
@@ -284,7 +284,7 @@ const renderMenuToday = () => {
     const menuToday = await request();
     for (let i = 0; i < 3; i++) {
       let randomMenu = [Math.floor(Math.random() * menuToday.length)];
-      const { Nombre, Descripcion, Precio, img } = menuToday[randomMenu];
+      const { Nombre, Descripcion, Precio, img, id } = menuToday[randomMenu];
 
       recomendation.innerHTML += `
       <div class="recomendationsCard">
@@ -294,18 +294,14 @@ const renderMenuToday = () => {
       <p>${Descripcion} </p>
       <h4>$ ${Precio}</h4>
       </div>
-      <button class="btnCart" id="recomendationsCardBtn">Agregar</button>
+      <button class="addProduct btnCart" data-id="${id}"
+      data-nombre="${Nombre}"
+      data-precio="${Precio}"
+      data-descripcion="${Descripcion}"
+      data-img="${img}">Agregar</button>
       </div>
       `;
-      ////BOTONES AGREGAR DE "HOY TE RECOMENDAMOS"
-      const addButton = document.querySelectorAll("#recomendationsCardBtn");
-      for (let i = 0; i < addButton.length; i++) {
-        addButton[i].addEventListener("click", () => {
-          alert("traerdelLocal");
-        });
-      }
     }
-    ////FIN BOTONES AGREGAR
   });
 };
 
@@ -341,6 +337,8 @@ const init = () => {
   cartOpen.addEventListener("click", closeOnClick);
   productosEnCarrito.addEventListener("click", handleQuantity);
   btnComprar.addEventListener("click", compraRealizada);
+  recomendation.addEventListener('click', addProduct)
+
 };
 
 init();

@@ -154,7 +154,7 @@
     "id": 16,
     "Nombre": "La 2117",
     "Descripcion": "La Mejor",
-    "Precio": "Gratis",
+    "Precio": 0,
     "Popular": true,
     "Stock": 100,
     "img": "./assets/img/PhotoPizza-16.png"
@@ -314,7 +314,7 @@
     "id": 32,
     "Nombre": "El bambino",
     "Descripcion": "la mas chica",
-    "Precio": "gratis",
+    "Precio": 0,
     "Popular": true,
     "Stock": 100,
     "img": "./assets/img/PhotoHambur-14.png"
@@ -634,7 +634,7 @@
     "id": 8,
     "Nombre": "Nick Gi",
     "Descripcion": "La que desaparece",
-    "Precio": "Gratis",
+    "Precio": 0,
     "Popular": true,
     "Stock": 100,
     "img": "./assets/img/PhotoPizza-8.png"
