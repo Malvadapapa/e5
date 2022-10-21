@@ -77,7 +77,7 @@ const renderProducts = (product) => {
       <p>${Descripcion}</p>
       </div>
     <div class="productCardPrice">
-      <p>$${Precio}</p>
+      <p>$${Precio === 0 ?"Gratis": Precio}</p>
       <button class="addProduct" data-id="${id}"
       data-nombre="${Nombre}"
       data-precio="${Precio}"
