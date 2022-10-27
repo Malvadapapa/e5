@@ -114,12 +114,13 @@ a > i {
   position: absolute;
   top: 0;
   backdrop-filter: blur(3px);
-
   display: none;
+  z-index: 2;
+  justify-content: flex-end;
 }
 
 .cartContainer {
-  position: absolute;
+  position: sticky;
   width: 100%;
   max-width: 400px;
   max-height: 900px;
@@ -748,6 +749,15 @@ footer h2 {
   color: #ffffff;
 }
 
+@media screen and (max-width: 520px) {
+  .cartContainer {
+    right: 0;
+  }
+  .cartContainer {
+    position: absolute;
+  }
+}
+
 @media screen and (max-width: 768px) {
   .headerNav {
     display: flex;
@@ -763,6 +773,7 @@ footer h2 {
       #ffa100 10.93%,
       rgba(251, 16, 61) 99.05%
     );
+    z-index: 1;
   }
 
   .bloc-icon {

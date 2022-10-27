@@ -12,10 +12,12 @@ const BtnCategory = document.querySelectorAll(".categoriesCard");
 const categoriesList = document.querySelectorAll(".category");
 //Boton de carrito
 const cart = document.getElementById("carrito_icon");
+//Contador de Carrito
+const cartCounter = document.getElementById("cartArticlesCounter");
 //Contenedor del carrito
 const cartOpen = document.getElementById("openCart");
 //Boton cerrar de carrito
-const cartCerrar = document.getElementById("cartClose");
+const cartClose = document.getElementById("cartClose");
 //Boton agregar desde recomendados
 const addButton = document.getElementById(".btnCart");
 //Contenedor de productos agregados
@@ -32,8 +34,6 @@ const btnComprar = document.getElementById("btnBuy");
 let cartLS = JSON.parse(localStorage.getItem("cartLS")) || [];
 
 const saveLocalStorage = () => {
-  //console.log("cartLS===>", typeof cartLS);
-  // ACA, SE CAMBIO JSON.stringify(carrito) / JSON.stringify(carrito);
   localStorage.setItem("cartLS", JSON.stringify(cartLS));
 };
 
@@ -77,7 +77,7 @@ const renderProducts = (product) => {
       <p>${Descripcion}</p>
       </div>
     <div class="productCardPrice">
-      <p>$${Precio === 0 ?"Gratis": Precio}</p>
+      <p>$${Precio === 0 ? "Gratis" : Precio}</p>
       <button class="addProduct" data-id="${id}"
       data-nombre="${Nombre}"
       data-precio="${Precio}"
@@ -90,12 +90,21 @@ const renderProducts = (product) => {
 // CONSEGUIR TOTAL
 const cartTotal = () => {
   return cartLS.reduce(
-    (acc, cur) => acc + Number(cur.precio) * Number(cur.cantidad),0 );
+    (acc, cur) => acc + Number(cur.precio) * Number(cur.cantidad),
+    0
+  );
+};
+
+// CONSEGUIR TOTAL DE CANTIDADES
+const countCard = () => {
+  return cartLS.reduce((acc, cur) => acc + Number(cur.cantidad), 0);
 };
 
 //RENDERIZAR TOTAL
 const renderTotal = () => {
   total.innerHTML = `$ ${cartTotal()}`;
+  //RENDERIZAR TOTAL NUMERO CARRITO
+  cartCounter.innerHTML = ` ${countCard()}`;
 };
 
 //DESHABILITAR BOTON COMPRAR
@@ -158,8 +167,6 @@ const showAlert2 = () => {
     imageAlt: "Simpsons",
   });
 };
-
-
 
 //AGREGAR AL CARRITO Y AL LS LOS PRODUCTOS
 const addProduct = (e) => {
@@ -292,7 +299,7 @@ const renderMenuToday = () => {
       <div class="recomendationsItems">
       <h3>${Nombre} </h3>
       <p>${Descripcion} </p>
-      <h4>$ ${Precio === 0 ?"Gratis": Precio}</h4>
+      <h4>$ ${Precio === 0 ? "Gratis" : Precio}</h4>
       </div>
       <button class="addProduct btnCart" data-id="${id}"
       data-nombre="${Nombre}"
@@ -303,6 +310,12 @@ const renderMenuToday = () => {
       `;
     }
   });
+};
+//CONTADOR DE CARRITO
+
+const cantCart = () => {
+  const hola = cartLS.reduce((acc, cur) => acc + Number(cur.cantidad), 0);
+  return;
 };
 
 // Funcion boton comprar realizada
@@ -332,13 +345,13 @@ const init = () => {
   productContainer.addEventListener("click", addProduct);
   document.addEventListener("DOMContentLoaded", renderCartProduct);
   document.addEventListener("DOMContentLoaded", renderTotal);
+
   document.addEventListener("DOMContentLoaded", desactivarBtn);
   document.addEventListener("DOMContentLoaded", renderCart(cartLS));
   cartOpen.addEventListener("click", closeOnClick);
   productosEnCarrito.addEventListener("click", handleQuantity);
   btnComprar.addEventListener("click", compraRealizada);
-  recomendation.addEventListener('click', addProduct)
-
+  recomendation.addEventListener("click", addProduct);
 };
 
 init();
